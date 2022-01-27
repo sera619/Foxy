@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{fbebed91-5013-2ad3-da59-c5af408b1aaf}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.Tilemap.Extras", "Unity.2D.Tilemap.Extras.csproj", "{553a7ae0-5a16-1689-5fc5-5f8fb3f4da28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HierarchyIcons", "HierarchyIcons.csproj", "{f6570e08-1599-e58b-4c7d-64d809b4c552}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.Tilemap.Extras.Editor", "Unity.2D.Tilemap.Extras.Editor.csproj", "{456b6da8-0bb6-e65c-fd0d-bdaa3e7dac20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HierarchyIconsEditor", "HierarchyIconsEditor.csproj", "{da741ba4-fa78-6c42-d038-2d077e9a2ebb}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{fbebed91-5013-2ad3-da59-c5af408b1aaf}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{fbebed91-5013-2ad3-da59-c5af408b1aaf}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{553a7ae0-5a16-1689-5fc5-5f8fb3f4da28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{553a7ae0-5a16-1689-5fc5-5f8fb3f4da28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{f6570e08-1599-e58b-4c7d-64d809b4c552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{f6570e08-1599-e58b-4c7d-64d809b4c552}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{456b6da8-0bb6-e65c-fd0d-bdaa3e7dac20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{456b6da8-0bb6-e65c-fd0d-bdaa3e7dac20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{da741ba4-fa78-6c42-d038-2d077e9a2ebb}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{da741ba4-fa78-6c42-d038-2d077e9a2ebb}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
