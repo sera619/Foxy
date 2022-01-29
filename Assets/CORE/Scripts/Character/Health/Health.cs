@@ -14,6 +14,10 @@ public class Health : MonoBehaviour
     [SerializeField] private float initShield = 4f;
     [SerializeField] private float maxShield = 4f;
 
+    [Header("Mana")]
+    [SerializeField] private float initMana = 10f;
+    [SerializeField] private float maxMana = 10f;
+  
     [Header("Settings")]
     [SerializeField] private bool destroyObject;
     
@@ -27,6 +31,7 @@ public class Health : MonoBehaviour
 
     public float CurrentHealth { get; set; }
     public float CurrentShield { get; set; }
+    public float CurrentMana { get; set; }
 
     private void Awake(){
         character = GetComponent<Character>();
@@ -36,6 +41,7 @@ public class Health : MonoBehaviour
 
         CurrentHealth = initHealth;
         CurrentShield = initShield;
+        CurrentMana = initMana;
 
         if(character != null){
             isPlayer = character.CharType == Character.CharTypes.Player;
@@ -48,6 +54,7 @@ public class Health : MonoBehaviour
     private void Update(){
         if(Input.GetKeyDown(KeyCode.L)){
             TakeDamage(2);
+            TakeMana(2);
         }
     }
 
@@ -61,6 +68,22 @@ public class Health : MonoBehaviour
         UpdateCharacterHealth();
     }
 
+    public void GainMana(int amount){
+        CurrentMana = Mathf.Min(CurrentMana + amount, maxMana);
+        UpdateCharacterHealth();
+    }
+
+
+    public void TakeMana(int amount){
+        if(CurrentMana<= 0){
+            return;
+        }
+        if(character != null){
+            CurrentMana -=amount;
+            UpdateCharacterHealth();
+            return;
+        }
+    }
     public void TakeDamage(int damage){
         if(CurrentHealth <= 0){
             return;
@@ -116,7 +139,7 @@ public class Health : MonoBehaviour
     private void UpdateCharacterHealth(){
         if (character != null && character.CharType == Character.CharTypes.Player){
             UIManager.Instance.UpdateHealth(CurrentHealth , maxHealth , CurrentShield, maxShield, isPlayer);
-
+            UIManager.Instance.UpdateMana(CurrentMana,maxMana, isPlayer);
         }
     }
 

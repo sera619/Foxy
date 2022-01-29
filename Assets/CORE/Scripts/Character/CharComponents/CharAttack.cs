@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharAttack : CharComponents
 {
-    private float attackDuration = .8f;
+    private float attackDuration = .6f;
     private float attackTimer;
 
     public bool isAttacking { get; set; }
@@ -25,7 +25,7 @@ public class CharAttack : CharComponents
         if(isAttacking){
             if(attackTimer < attackDuration){
                 charMovement.MoveSpeed = 0f;
-                attackTimer += Time.deltaTime;
+                attackTimer += Time.time;
             }else{
                 StopAttack();
             }
@@ -52,7 +52,6 @@ public class CharAttack : CharComponents
 
     private void StopAttack(){
         isAttacking = false;
-        controller.NormalMovement = true;
         charMovement.ResetSpeed();
     }
 

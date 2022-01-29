@@ -12,7 +12,7 @@ public class RandomReward : MonoBehaviour
     [Header("Rewards")]
     [SerializeField] private GameObject[] rewards;
     private Vector3 rewardRandomPosition;
-    public bool Rewarded = false;
+    private bool Rewarded = false;
 
 
     public void GiveReward(){

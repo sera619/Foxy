@@ -29,7 +29,7 @@ public class TeleportManager : MonoBehaviour
     
     private void TeleportPlayer(){
         if (teleportLocation == TeleportLocation.House){
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(1);
         }
         if(teleportLocation == TeleportLocation.Shop){
             SceneManager.LoadScene(4);

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-public class InventoryManager : MonoBehaviour
+using System;
+public class InventoryManager : Singleton<InventoryManager>
 {
     [Header("Inventory")]
     [SerializeField] private GameObject inventoryFrame;
@@ -22,6 +23,20 @@ public class InventoryManager : MonoBehaviour
     private int playerCurrentSpeedPotion;
 
     private bool isPlayer;
+
+
+
+    // Save System Start
+    private void Start() {
+        GameEvents.SaveInitiated += Save;
+    }
+
+    void Save(){
+        SaveLoad.Save(playerCurrentKey,"PlayerKeys");
+
+    }
+    // Save system end
+
     private void Update(){
         InternalUpdate();
         if(Input.GetKeyDown(KeyCode.I)){
@@ -29,20 +44,24 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-
     private void ShowInventory(){
         isShowing = !isShowing;
         inventoryFrame.SetActive(isShowing);
     }
 
 
-    private void UpdateInventory(int manaPotion, int healPotion, int speedPotion, int key , bool isThisPlayer){
+    public void UpdatePotions(int manaPotion, int healPotion, int speedPotion, bool isThisPlayer){
         playerCurrentHealthPotion = healPotion;
         playerCurrentManaPotion = manaPotion;
-        playerCurrentKey = key;
         playerCurrentSpeedPotion = speedPotion;
         isPlayer = isThisPlayer;
         
+    }
+
+
+    public void UpdateKeys(int keys, bool isThisPlayer){
+        playerCurrentKey = keys;
+        isPlayer = isThisPlayer;
     }
 
     private void InternalUpdate(){

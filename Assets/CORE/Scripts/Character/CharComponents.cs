@@ -9,6 +9,7 @@ public class CharComponents : MonoBehaviour
     protected Character character;
     protected CharController controller;
     protected CharMovement charMovement;
+    protected CharPotion charPotion;
     protected Health charHealth;
     private Rigidbody2D myBody;
    
@@ -17,6 +18,7 @@ public class CharComponents : MonoBehaviour
         character = GetComponent<Character>();
         charMovement = GetComponent<CharMovement>();
         charHealth = GetComponent<Health>();
+        charPotion = GetComponent<CharPotion>();
         myBody = GetComponent<Rigidbody2D>();
     }
 

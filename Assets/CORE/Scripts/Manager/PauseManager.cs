@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {   
@@ -24,4 +25,12 @@ public class PauseManager : MonoBehaviour
     public bool IsGamePaused() {
              return gamePaused;
         }  
+
+
+    public void GoMenu(){
+        PauseGame();
+        SceneManager.LoadScene(0);
+    }
+
+
 }

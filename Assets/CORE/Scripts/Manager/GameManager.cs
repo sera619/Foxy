@@ -13,4 +13,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(currentSceneID);
     }
 
+    public void Save(){
+        GameEvents.OnSaveInitiated();
+    }
+
+
+
 }

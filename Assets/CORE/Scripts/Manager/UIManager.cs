@@ -13,9 +13,12 @@ public class UIManager : Singleton<UIManager>
     
     [Header("Settings")]
     [SerializeField] private Image healthBar;
-    [SerializeField] private Image shieldBar;
     [SerializeField] private TextMeshProUGUI currentHealthTMP;
+    [SerializeField] private Image shieldBar;
     [SerializeField] private TextMeshProUGUI currentShieldTMP;
+    [SerializeField] private Image manaBar;
+    [SerializeField] private TextMeshProUGUI currentManaTMP;
+
 
     [Header("Text")]
     [SerializeField] private TextMeshProUGUI coinsTMP;
@@ -28,6 +31,8 @@ public class UIManager : Singleton<UIManager>
     private float playerMaxHealth;
     private float playerCurrentShield;
     private float playerMaxShield;
+    private float playerCurrentMana;
+    private float playerMaxMana;
 
     private bool isPlayer;
 
@@ -45,15 +50,26 @@ public class UIManager : Singleton<UIManager>
         playerMaxShield = maxShield;
         isPlayer = isThisPlayer;
     }
+
+    public void UpdateMana(float currentMana, float maxMana, bool isThisPlayer){
+        playerMaxMana = maxMana;
+        playerCurrentMana =currentMana;
+        isPlayer = isThisPlayer;
+    }
     private void InternalUpdate(){
         if(isPlayer){
             // healthbar update
             healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, playerCurrentHealth/playerMaxHealth, 10f * Time.deltaTime);
-            currentHealthTMP.text = playerCurrentHealth.ToString() + "/" + playerMaxHealth.ToString();
+            currentHealthTMP.text = playerCurrentHealth.ToString() + " / " + playerMaxHealth.ToString();
 
             //shieldbar update
             shieldBar.fillAmount = Mathf.Lerp(shieldBar.fillAmount, playerCurrentShield /playerMaxShield, 10f * Time.deltaTime);
-            currentShieldTMP.text = playerCurrentShield.ToString() + "/" + playerMaxShield.ToString();
+            currentShieldTMP.text = playerCurrentShield.ToString() + " / " + playerMaxShield.ToString();
+
+            //Manabar Update
+            manaBar.fillAmount = Mathf.Lerp(manaBar.fillAmount, playerCurrentMana / playerMaxMana, 10f * Time.deltaTime);
+            currentManaTMP.text = playerCurrentMana.ToString() + " / " + playerMaxMana.ToString();
+
 
         }
     }
