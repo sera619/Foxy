@@ -61,6 +61,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
      <Compile Include="Assets\CORE\Scripts\Camera\Camera2D.cs" />
      <Compile Include="Assets\CORE\Scripts\Manager\UIManager.cs" />
+     <Compile Include="Assets\CORE\Scripts\Utility\GameEvents.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
      <Compile Include="Assets\CORE\Scripts\Character\Health\Health.cs" />
      <Compile Include="Assets\CORE\Scripts\WorldComponents\ComponentBase.cs" />
@@ -105,7 +106,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-     <Compile Include="Assets\CORE\Scripts\Utility\GameEvents.cs" />
+     <Compile Include="Assets\CORE\Scripts\Character\CharComponents\CharEffects.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

@@ -26,6 +26,12 @@ public class PlayerSword : MonoBehaviour
         }    
     }
 
+    private void EquipSword(){
+        
+    }
+
+
+
 
 
 

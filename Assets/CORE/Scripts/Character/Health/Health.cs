@@ -28,16 +28,20 @@ public class Health : MonoBehaviour
     private EnemyHealth enemyHealth;
     private bool isPlayer;
     private bool shieldBroken;
+    public bool PlayerIsDead;
+    private CharEffects charEffects;
 
     public float CurrentHealth { get; set; }
     public float CurrentShield { get; set; }
     public float CurrentMana { get; set; }
+
 
     private void Awake(){
         character = GetComponent<Character>();
         controller = GetComponent<CharController>();
         myCollider2D = GetComponent<Collider2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        charEffects= GetComponent<CharEffects>();
 
         CurrentHealth = initHealth;
         CurrentShield = initShield;
@@ -111,6 +115,12 @@ public class Health : MonoBehaviour
 
             character.enabled = false;
             controller.enabled = false;
+            if(character.CharType == Character.CharTypes.Player){
+                charEffects.PlayEffect(1);
+                if(charEffects.Animator.GetCurrentAnimatorStateInfo(0).IsName("Dead")){
+                    UIManager.Instance.ShowDeathScreen();
+                }
+            }
         }
         if(destroyObject){
             DestroyObject();
