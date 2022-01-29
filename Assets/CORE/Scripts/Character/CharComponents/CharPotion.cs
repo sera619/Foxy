@@ -105,10 +105,6 @@ public class CharPotion : CharComponents
         }
     }
 
-    private void UsePotion(){
-//        if
-    }
-
 
     private void Save(){
         

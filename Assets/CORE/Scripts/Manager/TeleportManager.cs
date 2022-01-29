@@ -35,10 +35,10 @@ public class TeleportManager : MonoBehaviour
             SceneManager.LoadScene(4);
         }
         if(teleportLocation == TeleportLocation.Dungeon){
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(2);
         }
         if(teleportLocation == TeleportLocation.World){
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
     }
 

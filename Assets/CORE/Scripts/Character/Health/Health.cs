@@ -34,7 +34,7 @@ public class Health : MonoBehaviour
     public float CurrentHealth { get; set; }
     public float CurrentShield { get; set; }
     public float CurrentMana { get; set; }
-
+    private GameManager gameManager;
 
     private void Awake(){
         character = GetComponent<Character>();
@@ -42,6 +42,8 @@ public class Health : MonoBehaviour
         myCollider2D = GetComponent<Collider2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         charEffects= GetComponent<CharEffects>();
+        gameManager = FindObjectOfType<GameManager>();
+
 
         CurrentHealth = initHealth;
         CurrentShield = initShield;
@@ -56,6 +58,9 @@ public class Health : MonoBehaviour
     }
 
     private void Update(){
+        if (isPlayer){
+            StartCoroutine(Timer());
+        }
         if(Input.GetKeyDown(KeyCode.L)){
             TakeDamage(2);
             TakeMana(2);
@@ -92,6 +97,9 @@ public class Health : MonoBehaviour
         if(CurrentHealth <= 0){
             return;
         }
+        if(isPlayer){
+            charEffects.PlayEffect(2);
+        }
         if (!shieldBroken && character != null && initShield > 0){
             CurrentShield -= damage;
             UpdateCharacterHealth();
@@ -116,10 +124,8 @@ public class Health : MonoBehaviour
             character.enabled = false;
             controller.enabled = false;
             if(character.CharType == Character.CharTypes.Player){
+                gameManager.Save();
                 charEffects.PlayEffect(1);
-                if(charEffects.Animator.GetCurrentAnimatorStateInfo(0).IsName("Dead")){
-                    UIManager.Instance.ShowDeathScreen();
-                }
             }
         }
         if(destroyObject){
@@ -139,6 +145,7 @@ public class Health : MonoBehaviour
 
         CurrentHealth = initHealth;
         CurrentShield = initShield;
+        CurrentMana = initMana;
 
         UpdateCharacterHealth();
     }
@@ -153,6 +160,20 @@ public class Health : MonoBehaviour
         }
     }
 
-
+    private IEnumerator Timer(){
+            if(charEffects.DeadEffect){
+                yield return new WaitForSeconds(1);
+                charEffects.IsPlaying = false;
+                charEffects.DeadEffect = false;
+                charEffects.SpriteRenderer.enabled = false;
+                UIManager.Instance.ShowDeathScreen();
+            }
+            if(charEffects.HitEffect){
+                yield return new WaitForSeconds(0.2f);
+                charEffects.IsPlaying = false;
+                charEffects.HitEffect = false;
+                charEffects.SpriteRenderer.enabled = false;
+            } 
+    }
 
 }

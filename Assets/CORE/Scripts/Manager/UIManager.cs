@@ -10,8 +10,15 @@ using System;
 
 public class UIManager : Singleton<UIManager>
 {
-    
-    [Header("Settings")]
+    [Header("Name/Level Settings")]
+    [SerializeField] private TextMeshProUGUI nameField;
+    [SerializeField] private string playerName;
+
+    [SerializeField] private TextMeshProUGUI levelField;
+    [SerializeField] private string  levelValue;
+
+
+    [Header("Bar Settings")]
     [SerializeField] private Image healthBar;
     [SerializeField] private TextMeshProUGUI currentHealthTMP;
     [SerializeField] private Image shieldBar;
@@ -36,6 +43,11 @@ public class UIManager : Singleton<UIManager>
     private float playerMaxShield;
     private float playerCurrentMana;
     private float playerMaxMana;
+
+    private string currentPlayerName;
+    private int currentPlayerLevel;
+
+
 
     private bool isPlayer;
 
@@ -64,6 +76,13 @@ public class UIManager : Singleton<UIManager>
         }
     }
 
+
+    public void UpdatePlayerInfo(string name , int playerLevel,bool isThisPlayer){
+        currentPlayerName= name;
+        currentPlayerLevel = playerLevel;
+        isPlayer = isThisPlayer;
+    }
+
     public void UpdateMana(float currentMana, float maxMana, bool isThisPlayer){
         playerMaxMana = maxMana;
         playerCurrentMana =currentMana;
@@ -82,7 +101,9 @@ public class UIManager : Singleton<UIManager>
             //Manabar Update
             manaBar.fillAmount = Mathf.Lerp(manaBar.fillAmount, playerCurrentMana / playerMaxMana, 10f * Time.deltaTime);
             currentManaTMP.text = playerCurrentMana.ToString() + " / " + playerMaxMana.ToString();
-
+            //level/Name Update
+            nameField.text = playerName;
+            levelField.text = levelValue.ToString();
 
         }
     }

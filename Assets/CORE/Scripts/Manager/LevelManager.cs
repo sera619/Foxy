@@ -20,7 +20,7 @@ public class LevelManager : Singleton<LevelManager>
             ReviveCharacter();
         }
     }
-    private void ReviveCharacter(){
+    public void ReviveCharacter(){
         if (playableCharacter.GetComponent<Health>().CurrentHealth <= 0){
             playableCharacter.GetComponent<Health>().Revive();
             playableCharacter.transform.position = spawnPosition.position;
