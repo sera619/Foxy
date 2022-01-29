@@ -20,6 +20,9 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private TextMeshProUGUI currentManaTMP;
 
 
+    [Header("DeathScreen")]
+    [SerializeField] private GameObject deathScreen;
+
     [Header("Text")]
     [SerializeField] private TextMeshProUGUI coinsTMP;
     
@@ -49,6 +52,16 @@ public class UIManager : Singleton<UIManager>
         playerCurrentShield = currentShield;
         playerMaxShield = maxShield;
         isPlayer = isThisPlayer;
+    }
+    public void ShowDeathScreen(){
+        if(!deathScreen.activeSelf){
+            deathScreen.SetActive(true);
+        }
+    }
+    public void HideDeathScreen(){
+        if(deathScreen.activeSelf){
+            deathScreen.SetActive(false);
+        }
     }
 
     public void UpdateMana(float currentMana, float maxMana, bool isThisPlayer){
