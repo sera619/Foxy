@@ -42,11 +42,6 @@ public class CharAttack : CharComponents
         }
         isAttacking = true;
         attackTimer = 0f;
-        controller.NormalMovement = false;
-
-        if(character.CharAnimator.GetBool("Move")){
-            character.CharAnimator.SetBool("Move", false);
-        }
         character.CharAnimator.SetTrigger("Attack");
     }
 
