@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4874352970502710779}
   - component: {fileID: 4874352970502710780}
   - component: {fileID: 4874352970502710781}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,10 @@ MonoBehaviour:
   maxHealth: 2
   initShield: 0
   maxShield: 0
+  initMana: 10
+  maxMana: 10
   destroyObject: 0
+  PlayerIsDead: 0
 --- !u!114 &4874352970502710781
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,53 +2,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharAttack : CharComponents
+public class CharAttack : MonoBehaviour
 {
-    private float attackDuration = .6f;
-    private float attackTimer;
+    
+    [Header("Player Sword Damage")]
+    [SerializeField] private int swordDamage = 2;
+    [SerializeField] private PlayerSword playerSword;
 
-    public bool isAttacking { get; set; }
-    protected override void Start(){
-        base.Start();
+    [SerializeField] private Animator animator;
+    private CharMovement charMovement;
+    private CharController controller;
+    public bool canAttack = true;
+    private bool isAttacking = false;
+
+    
+    
+    private void Start(){
+        controller = GetComponent<CharController>();
+        charMovement = GetComponent<CharMovement>();
+        if(playerSword != null){
+            playerSword.SwordDamage = swordDamage;
+        }
     }
 
-    protected override void HandleInput()
-    {
-        if(Input.GetKeyDown(KeyCode.Space)){
+    private void Update(){
+        if(canAttack){
+            if(Input.GetKeyDown(KeyCode.Space)){
             Attack();
         }
-    }
-
-    protected override void HandleAbility()
-    {
-        base.HandleAbility();
-        if(isAttacking){
-            if(attackTimer < attackDuration){
-                charMovement.MoveSpeed = 0f;
-                attackTimer += Time.time;
-            }else{
-                StopAttack();
-            }
-
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Atack")){
+            canAttack = false;
+        }else{
+            canAttack = true;
+            charMovement.ResetSpeed();
         }
+        
 
-    }
+   }
+       
 
-
-
+        
+}
+        
     private void Attack(){
-        if(isAttacking){
-            return;
-        }
+        charMovement.MoveSpeed = 0f;
+        canAttack = false;
         isAttacking = true;
-        attackTimer = 0f;
-        character.CharAnimator.SetTrigger("Attack");
+        animator.SetTrigger("Attack");
+
+
     }
 
-    private void StopAttack(){
-        isAttacking = false;
-        charMovement.ResetSpeed();
-    }
 
 
 }

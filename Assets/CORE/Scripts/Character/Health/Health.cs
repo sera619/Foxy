@@ -25,12 +25,11 @@ public class Health : MonoBehaviour
     private CharController controller;
     private Collider2D myCollider2D;
     private SpriteRenderer spriteRenderer;
-    private EnemyHealth enemyHealth;
     private bool isPlayer;
     private bool shieldBroken;
-    public bool PlayerIsDead;
     private CharEffects charEffects;
 
+    private EnemyHealth enemyHealth;
     public float CurrentHealth { get; set; }
     public float CurrentShield { get; set; }
     public float CurrentMana { get; set; }
@@ -43,7 +42,7 @@ public class Health : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         charEffects= GetComponent<CharEffects>();
         gameManager = FindObjectOfType<GameManager>();
-
+    	enemyHealth = GetComponent<EnemyHealth>();
 
         CurrentHealth = initHealth;
         CurrentShield = initShield;
@@ -58,7 +57,7 @@ public class Health : MonoBehaviour
     }
 
     private void Update(){
-        if (isPlayer){
+        if (charEffects != null){
             StartCoroutine(Timer());
         }
         if(Input.GetKeyDown(KeyCode.L)){
@@ -97,9 +96,9 @@ public class Health : MonoBehaviour
         if(CurrentHealth <= 0){
             return;
         }
-        if(isPlayer){
+        if(charEffects !=null)
             charEffects.PlayEffect(2);
-        }
+        
         if (!shieldBroken && character != null && initShield > 0){
             CurrentShield -= damage;
             UpdateCharacterHealth();
@@ -123,9 +122,11 @@ public class Health : MonoBehaviour
 
             character.enabled = false;
             controller.enabled = false;
+            if(charEffects != null) {
+                charEffects.PlayEffect(1);
+            }
             if(character.CharType == Character.CharTypes.Player){
                 gameManager.Save();
-                charEffects.PlayEffect(1);
             }
         }
         if(destroyObject){
@@ -154,6 +155,14 @@ public class Health : MonoBehaviour
         gameObject.SetActive(false);
     }
     private void UpdateCharacterHealth(){
+
+        //Ene
+        if(enemyHealth != null && character.CharType == Character.CharTypes.AI){
+            enemyHealth.UpdateEnemyHealth(CurrentHealth, maxHealth,CurrentShield,maxShield);
+            enemyHealth.UpdateEnemyMana(CurrentMana, maxMana);
+        }
+
+        //player health 
         if (character != null && character.CharType == Character.CharTypes.Player){
             UIManager.Instance.UpdateHealth(CurrentHealth , maxHealth , CurrentShield, maxShield, isPlayer);
             UIManager.Instance.UpdateMana(CurrentMana,maxMana, isPlayer);
@@ -166,7 +175,9 @@ public class Health : MonoBehaviour
                 charEffects.IsPlaying = false;
                 charEffects.DeadEffect = false;
                 charEffects.SpriteRenderer.enabled = false;
-                UIManager.Instance.ShowDeathScreen();
+                if(isPlayer){
+                    UIManager.Instance.ShowDeathScreen();
+                }
             }
             if(charEffects.HitEffect){
                 yield return new WaitForSeconds(0.2f);

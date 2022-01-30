@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5887348057378471894}
   - component: {fileID: 5887348057378471895}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: objects_149
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5887348058215314148}
   - component: {fileID: 5887348058215314155}
   - component: {fileID: 5887348058215314154}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: InfoPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 5887348058307245298}
   - component: {fileID: 5887348058307245297}
   - component: {fileID: 5887348058307245296}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 5887348058430512253}
   - component: {fileID: 5887348058430512254}
   - component: {fileID: 5887348058430512255}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -486,7 +486,7 @@ GameObject:
   - component: {fileID: 5887348058559780023}
   - component: {fileID: 5887348058559780022}
   - component: {fileID: 5887348058559780021}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MediumShadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -606,7 +606,7 @@ GameObject:
   - component: {fileID: 5887348058855850304}
   - component: {fileID: 5887348058855850306}
   - component: {fileID: 5887348058855850305}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

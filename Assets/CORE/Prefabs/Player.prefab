@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3118755754009667555}
   m_Layer: 0
   m_Name: Sprite
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,11 +120,11 @@ GameObject:
   - component: {fileID: 3118755754246289750}
   - component: {fileID: 3118755754246289741}
   - component: {fileID: 3118755754246289746}
-  - component: {fileID: 3118755754246289743}
   - component: {fileID: 3118755754246289740}
   - component: {fileID: 3118755754246289742}
   - component: {fileID: 3118755754246289737}
   - component: {fileID: 3118755754246289736}
+  - component: {fileID: 3155903344331684635}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -275,18 +275,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 8
---- !u!114 &3118755754246289743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3118755754246289754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8752511ee0528b04a8fb1a1836afc51f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3118755754246289740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,7 +294,6 @@ MonoBehaviour:
   initMana: 10
   maxMana: 10
   destroyObject: 0
-  PlayerIsDead: 0
 --- !u!114 &3118755754246289742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,6 +339,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 3118755754871955801}
   spriteRenderer: {fileID: 3118755754871955800}
+--- !u!114 &3155903344331684635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3118755754246289754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8752511ee0528b04a8fb1a1836afc51f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swordDamage: 2
+  playerSword: {fileID: 3118755754915755415}
+  animator: {fileID: 3118755754009667555}
+  canAttack: 1
 --- !u!1 &3118755754871955807
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,7 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f996b9ea09beb42429ae0cd55710fac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordDamage: 4
+  charAttack: {fileID: 3155903344331684635}
 --- !u!1 &3118755755693961134
 GameObject:
   m_ObjectHideFlags: 0

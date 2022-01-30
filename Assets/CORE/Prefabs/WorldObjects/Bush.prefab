@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 155912127321295314}
   - component: {fileID: 155912127321295315}
   - component: {fileID: 155912127321295316}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bush
   m_TagString: WorldObject
   m_Icon: {fileID: 0}
@@ -189,6 +189,7 @@ MonoBehaviour:
   initMana: 10
   maxMana: 10
   destroyObject: 0
+  PlayerIsDead: 0
 --- !u!114 &155912127321295316
 MonoBehaviour:
   m_ObjectHideFlags: 0

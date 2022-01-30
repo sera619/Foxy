@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8732753205265782479}
   - component: {fileID: 8732753205265782472}
   - component: {fileID: -7265117217338587081}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 8732753205279359152}
   - component: {fileID: 8732753205279359158}
   - component: {fileID: 8732753205279359159}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ChestSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8732753205827873207}
   - component: {fileID: 8732753205827873206}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
