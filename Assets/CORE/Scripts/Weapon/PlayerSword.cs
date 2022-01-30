@@ -5,34 +5,22 @@ using UnityEngine;
 public class PlayerSword : MonoBehaviour
 {
 
-    [Header("Settings")]
-    [SerializeField] private int swordDamage;
-
-    public int SwordDamage => swordDamage;
-
+    [SerializeField] private CharAttack charAttack;
+    [SerializeField] private int swordDamage= 2;
+    public int SwordDamage { get; set;}
     private Collider2D myCollider;
 
-
-    private void Start(){
-        myCollider = GetComponent<Collider2D>();
+    private void Start() {
+        SwordDamage =  swordDamage;
+    }
+    public bool canAttack(){
+        return charAttack.canAttack = true;
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.CompareTag("WorldObject")){
-            return;
-        }
-        if(other.CompareTag("Enemy")){
-            other.GetComponent<Health>().TakeDamage(SwordDamage);
-        }    
-    }
+
 
     private void EquipSword(){
         
     }
-
-
-
-
-
 
 }
