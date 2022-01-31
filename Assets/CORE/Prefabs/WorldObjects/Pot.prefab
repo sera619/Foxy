@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4874352970502710779}
   - component: {fileID: 4874352970502710780}
   - component: {fileID: 4874352970502710781}
+  - component: {fileID: 4005995971335807525}
   m_Layer: 6
   m_Name: Pot
   m_TagString: Untagged
@@ -120,8 +121,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.17191577}
-  m_Size: {x: 0.326563, y: 0.4915166}
+  m_Offset: {x: 0, y: -0.2390846}
+  m_Size: {x: 0.39555442, y: 0.39555442}
   m_Direction: 0
 --- !u!50 &4874352970502710778
 Rigidbody2D:
@@ -179,7 +180,6 @@ MonoBehaviour:
   initMana: 10
   maxMana: 10
   destroyObject: 0
-  PlayerIsDead: 0
 --- !u!114 &4874352970502710781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,3 +197,14 @@ MonoBehaviour:
   chanceToDrop: 50
   rewards:
   - {fileID: 6238976774763190405, guid: c7c972cdfc0e575479c69c69bd07f35a, type: 3}
+--- !u!210 &4005995971335807525
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874352970502710782}
+  m_Enabled: 1
+  m_SortingLayerID: 7610173
+  m_SortingLayer: 2
+  m_SortingOrder: 1

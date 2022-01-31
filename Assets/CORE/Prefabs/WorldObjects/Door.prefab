@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 7690442183331846547}
   - component: {fileID: 8036278753260449366}
   - component: {fileID: 8578475659451728706}
+  - component: {fileID: 2809941180215387507}
   m_Layer: 0
   m_Name: Door
   m_TagString: Door
@@ -246,3 +247,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 8779507195697346252}
   openSprite: {fileID: 192206388758606636, guid: 0c2bae9d5125843478ec03ff046b0591, type: 3}
+--- !u!210 &2809941180215387507
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4883432381523530787}
+  m_Enabled: 1
+  m_SortingLayerID: 7610173
+  m_SortingLayer: 2
+  m_SortingOrder: 1

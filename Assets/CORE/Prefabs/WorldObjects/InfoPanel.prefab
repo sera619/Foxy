@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 5887348058215314148}
   - component: {fileID: 5887348058215314155}
   - component: {fileID: 5887348058215314154}
+  - component: {fileID: 8583534562017703980}
   m_Layer: 6
   m_Name: InfoPanel
   m_TagString: Untagged
@@ -240,6 +241,17 @@ MonoBehaviour:
   showingText: "Silberh\xFCgel"
   ingamePanel: {fileID: 5887348058307245303}
   icon: {fileID: 5887348057378471893}
+--- !u!210 &8583534562017703980
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5887348058215314153}
+  m_Enabled: 1
+  m_SortingLayerID: 7610173
+  m_SortingLayer: 2
+  m_SortingOrder: 1
 --- !u!1 &5887348058307245303
 GameObject:
   m_ObjectHideFlags: 0
