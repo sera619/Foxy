@@ -113,7 +113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3118755754246289749}
   - component: {fileID: 3118755754246289751}
-  - component: {fileID: 3118755754246289748}
+  - component: {fileID: 7526445701616610977}
   - component: {fileID: 3118755754246289744}
   - component: {fileID: 3118755754246289747}
   - component: {fileID: 3118755754246289745}
@@ -170,8 +170,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &3118755754246289748
-BoxCollider2D:
+--- !u!70 &7526445701616610977
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -183,19 +183,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07094556, y: -0.032877147}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.27253425, y: 0.5400374}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.027435908, y: -0.29900083}
+  m_Size: {x: 0.31459525, y: 0.2014232}
+  m_Direction: 1
 --- !u!114 &3118755754246289744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,6 +508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charAttack: {fileID: 3155903344331684635}
+  swordDamage: 2
 --- !u!1 &3118755755693961134
 GameObject:
   m_ObjectHideFlags: 0

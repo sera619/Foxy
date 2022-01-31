@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 39356924844240218}
   - component: {fileID: 6238976774763190406}
   - component: {fileID: 3702374320182834683}
+  - component: {fileID: 5556653664974079754}
   m_Layer: 0
   m_Name: HealUp
   m_TagString: Collectable
@@ -213,6 +214,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!210 &5556653664974079754
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6238976774763190405}
+  m_Enabled: 1
+  m_SortingLayerID: 7610173
+  m_SortingLayer: 2
+  m_SortingOrder: 0
 --- !u!1 &7336507819459956166
 GameObject:
   m_ObjectHideFlags: 0
