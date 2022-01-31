@@ -8,7 +8,9 @@ public class TeleportManager : MonoBehaviour
         House,
         Dungeon,
         Shop,
-        World
+        World,
+        Town
+
     }
     [Header("Teleport Settings")]
     [SerializeField] private TeleportLocation teleportLocation = TeleportLocation.House;
@@ -39,6 +41,9 @@ public class TeleportManager : MonoBehaviour
         }
         if(teleportLocation == TeleportLocation.World){
             SceneManager.LoadScene(3);
+        }
+        if(teleportLocation == TeleportLocation.Town){
+            SceneManager.LoadScene(4);
         }
     }
 
