@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CORE/Scenes/Town.unity
     guid: af77ef12d824fc54797e994e33230ec4
+  - enabled: 1
+    path: Assets/CORE/Scenes/Wood.unity
+    guid: 7ad857b18b0d0b24caacdb4064387a66
   m_configObjects: {}

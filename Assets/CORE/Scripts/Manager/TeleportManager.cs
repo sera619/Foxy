@@ -9,6 +9,8 @@ public class TeleportManager : MonoBehaviour
         Dungeon,
         Shop,
         World,
+        Wood,
+
         Town
 
     }
@@ -33,8 +35,8 @@ public class TeleportManager : MonoBehaviour
         if (teleportLocation == TeleportLocation.House){
             SceneManager.LoadScene(1);
         }
-        if(teleportLocation == TeleportLocation.Shop){
-            SceneManager.LoadScene(4);
+        if(teleportLocation == TeleportLocation.Wood){
+            SceneManager.LoadScene(5);
         }
         if(teleportLocation == TeleportLocation.Dungeon){
             SceneManager.LoadScene(2);
