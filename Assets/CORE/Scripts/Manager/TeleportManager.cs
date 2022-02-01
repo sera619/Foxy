@@ -10,9 +10,7 @@ public class TeleportManager : MonoBehaviour
         Shop,
         World,
         Wood,
-
         Town
-
     }
     [Header("Teleport Settings")]
     [SerializeField] private TeleportLocation teleportLocation = TeleportLocation.House;

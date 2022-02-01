@@ -36,11 +36,11 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\CGHierarchyIcons\Editor\Helpers\TextureHelper.cs" />
-     <Compile Include="Assets\CGHierarchyIcons\Editor\InspectorEditors\HierarchyIconEditor.cs" />
-     <Compile Include="Assets\CGHierarchyIcons\Editor\UnityCallbacks\DestroyInstancesOnBuild.cs" />
      <Compile Include="Assets\CGHierarchyIcons\Editor\UnityCallbacks\ShowIconOnHierarchyView.cs" />
+     <Compile Include="Assets\CGHierarchyIcons\Editor\InspectorEditors\HierarchyIconEditor.cs" />
      <Compile Include="Assets\CGHierarchyIcons\Editor\Windows\PickIconWindow.cs" />
+     <Compile Include="Assets\CGHierarchyIcons\Editor\Helpers\TextureHelper.cs" />
+     <Compile Include="Assets\CGHierarchyIcons\Editor\UnityCallbacks\DestroyInstancesOnBuild.cs" />
      <None Include="Assets\CGHierarchyIcons\Editor\HierarchyIconsEditor.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>C:\1Coding\Codes\C ++\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

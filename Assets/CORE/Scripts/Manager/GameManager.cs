@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public int currentSceneID = 0;
+    
 
     public void LoadLevel(){
         Debug.Log("call 'LoadLevel'");
