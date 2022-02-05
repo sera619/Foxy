@@ -45,9 +45,8 @@ public class Shop : MonoBehaviour
         }
         fullPrice = 0;
         ResetInfo();
-        if(goldDisplay != null){
-            goldDisplay = vendor.PlayerGoldTMP;
-        }
+        goldDisplay = vendor.PlayerGoldTMP;
+        
         playerGold = vendor.PlayerGold;
 
     }
