@@ -7,10 +7,13 @@ public class LevelManager : Singleton<LevelManager>
 {
     [SerializeField] private Character playableCharacter;
     [SerializeField] private Transform spawnPosition;
+    [SerializeField] private GameObject transitionPlayer;
 
+    private Animator transAnimator;
     public Transform Player { get; set; }
 
     private void Start(){
+        transAnimator = transitionPlayer.GetComponent<Animator>();
         Player = playableCharacter.transform;
         Camera2D.Instance.Target = playableCharacter.transform;
     }
