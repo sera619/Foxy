@@ -8161,11 +8161,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vendorPanel: {fileID: 189983167}
-  itemsToSell:
-  - {fileID: 6238976774763190405, guid: c7c972cdfc0e575479c69c69bd07f35a, type: 3}
-  - {fileID: 6238976774763190405, guid: 4d550162c379bf14c94e68facb6dd48a, type: 3}
   playerGoldTMP: {fileID: 1249026128}
   icon: {fileID: 119723009}
+  PlayerGold: 0
+  PlayerGoldTMP: {fileID: 0}
 --- !u!1001 &3118755754107099069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8247,6 +8246,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1244687667743803054, guid: b0387ab1cf618da48bc84a6b039976dd, type: 3}
+      propertyPath: vendor
+      value: 
+      objectReference: {fileID: 2136616133}
     - target: {fileID: 5009720888655373188, guid: b0387ab1cf618da48bc84a6b039976dd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

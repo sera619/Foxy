@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae655c7230f74649ad3ecbe09d391f3, type: 3}
+  m_Name: SmallManaPotion
+  m_EditorClassIdentifier: 
+  title: kleiner Manatrank
+  description: Stellt eine kleine Menge Mana wieder her.
+  itemIcon: {fileID: 21300000, guid: 382b900eb2a618642871ce06e6a0f701, type: 3}
+  itemPrice: 30
+  addAmount: 0
+  removeAmount: 0

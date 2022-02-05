@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.Tilemap.Extras.Edi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HierarchyIconsEditor", "HierarchyIconsEditor.csproj", "{da741ba4-fa78-6c42-d038-2d077e9a2ebb}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{a0eb9a13-686d-834f-a5b2-9f4b2cc66df5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,8 @@ Global
 		{456b6da8-0bb6-e65c-fd0d-bdaa3e7dac20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{da741ba4-fa78-6c42-d038-2d077e9a2ebb}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{da741ba4-fa78-6c42-d038-2d077e9a2ebb}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{a0eb9a13-686d-834f-a5b2-9f4b2cc66df5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{a0eb9a13-686d-834f-a5b2-9f4b2cc66df5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

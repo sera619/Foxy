@@ -107,7 +107,6 @@ public class CharPotion : CharComponents
 
 
     private void Save(){
-        
         SaveLoad.Save<int>(CurrentHealthPotion, "PlayerHPotion");
         SaveLoad.Save<int>(CurrentManaPotion, "PlayerMPotion");
         SaveLoad.Save<int>(CurrentSpeedPotion, "PlayerSPotion");

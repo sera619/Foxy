@@ -60,6 +60,9 @@ public class Health : MonoBehaviour
         if (charEffects != null){
             StartCoroutine(Timer());
         }
+        if(!isPlayer){
+            return;
+        }
         if(Input.GetKeyDown(KeyCode.L)){
             TakeDamage(2);
             TakeMana(2);
