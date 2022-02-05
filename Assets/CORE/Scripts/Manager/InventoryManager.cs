@@ -14,6 +14,7 @@ public class InventoryManager : Singleton<InventoryManager>
     [SerializeField] private TextMeshProUGUI manaTMP;
     [SerializeField] private TextMeshProUGUI healTMP;
     [SerializeField] private TextMeshProUGUI speedTMP;
+    [SerializeField] private TextMeshProUGUI goldTMP;
  
 
     private bool isShowing;
@@ -21,6 +22,8 @@ public class InventoryManager : Singleton<InventoryManager>
     private int playerCurrentManaPotion;
     private int playerCurrentKey;
     private int playerCurrentSpeedPotion;
+
+    private int playerCurrentGold;
 
     private bool isPlayer;
 
@@ -33,6 +36,10 @@ public class InventoryManager : Singleton<InventoryManager>
 
     void Save(){
         SaveLoad.Save(playerCurrentKey,"PlayerKeys");
+        SaveLoad.Save(playerCurrentGold, "PlayerGold");
+        SaveLoad.Save(playerCurrentHealthPotion,"PlayerHpotion");
+        SaveLoad.Save(playerCurrentManaPotion, "PlayerMpotion");
+
 
     }
     // Save system end
@@ -58,6 +65,10 @@ public class InventoryManager : Singleton<InventoryManager>
         
     }
 
+    public void UpdateGold(int gold, bool isThisPlayer){
+        playerCurrentGold = gold;
+        isPlayer = isThisPlayer;
+    }
 
     public void UpdateKeys(int keys, bool isThisPlayer){
         playerCurrentKey = keys;
@@ -70,6 +81,7 @@ public class InventoryManager : Singleton<InventoryManager>
             healTMP.text = playerCurrentHealthPotion.ToString();
             speedTMP.text = playerCurrentSpeedPotion.ToString();
             manaTMP.text = playerCurrentManaPotion.ToString();
+            goldTMP.text = playerCurrentGold.ToString();
         }
     }
 }
