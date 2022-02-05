@@ -45,6 +45,9 @@ public class TeleportManager : MonoBehaviour
         if(teleportLocation == TeleportLocation.Town){
             SceneManager.LoadScene(4);
         }
+        if(teleportLocation == TeleportLocation.Shop){
+            SceneManager.LoadScene(5);
+        }
     }
 
 
