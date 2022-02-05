@@ -46,7 +46,7 @@ public class TeleportManager : MonoBehaviour
             SceneManager.LoadScene(4);
         }
         if(teleportLocation == TeleportLocation.Shop){
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene(6);
         }
     }
 
