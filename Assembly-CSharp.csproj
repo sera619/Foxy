@@ -78,11 +78,14 @@
      <Compile Include="Assets\CORE\Scripts\Manager\Shop\ShopItem.cs" />
      <Compile Include="Assets\Realistic Glitches Lite\Assets\Scripts\ShaderEffect_BleedingColors.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
+     <Compile Include="Assets\CORE\Scripts\Weapon\SpellAmmo.cs" />
      <Compile Include="Assets\CodeMonkey\Utils\World_Sprite.cs" />
      <Compile Include="Assets\CORE\Scripts\Singleton\Singleton.cs" />
+     <Compile Include="Assets\CORE\Scripts\Character\CharComponents\CharSpell.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\CodeMonkey\Utils\World_Bar.cs" />
      <Compile Include="Assets\CORE\Scripts\WorldComponents\Interactable\Trap.cs" />
+     <Compile Include="Assets\CORE\Scripts\Weapon\PlayerSpell.cs" />
      <Compile Include="Assets\Realistic Glitches Lite\Assets\Scripts\ShaderEffect_Unsync.cs" />
      <Compile Include="Assets\CodeMonkey\Utils\UtilsClass.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
@@ -93,6 +96,7 @@
      <Compile Include="Assets\Realistic Glitches Lite\Assets\Scripts\ShaderEffect_CorruptedVram.cs" />
      <Compile Include="Assets\CORE\Scripts\Utility\GameEvents.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
+     <Compile Include="Assets\CORE\Scripts\Weapon\SpellTypes\SingleShotSpell.cs" />
      <Compile Include="Assets\CORE\Scripts\Character\Health\Health.cs" />
      <Compile Include="Assets\CORE\Scripts\WorldComponents\Interactable\DoorGarden.cs" />
      <Compile Include="Assets\CORE\Scripts\WorldComponents\ComponentBase.cs" />
@@ -136,6 +140,7 @@
      <Compile Include="Assets\Standards\FSM\StateMachine.cs" />
      <Compile Include="Assets\CORE\Scripts\Character\CharComponents\CharAttack.cs" />
      <Compile Include="Assets\CORE\Scripts\Weapon\PlayerSword.cs" />
+     <Compile Include="Assets\CORE\Scripts\Weapon\SpellTypes\Projectile.cs" />
      <Compile Include="Assets\CORE\Scripts\Character\CharWeapon.cs" />
      <Compile Include="Assets\CORE\Scripts\Utility\Lib.cs" />
      <Compile Include="Assets\CORE\Scripts\Manager\PauseManager.cs" />
@@ -157,11 +162,7 @@
      <Compile Include="Assets\CodeMonkey\CMDebug.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
      <Compile Include="Assets\CodeMonkey\Utils\FunctionPeriodic.cs" />
-     <Compile Include="Assets\CORE\Scripts\Weapon\PlayerSpell.cs" />
-     <Compile Include="Assets\CORE\Scripts\Weapon\SpellAmmo.cs" />
-     <Compile Include="Assets\CORE\Scripts\Character\CharComponents\CharSpell.cs" />
-     <Compile Include="Assets\CORE\Scripts\Weapon\SpellTypes\SingleShotSpell.cs" />
-     <Compile Include="Assets\CORE\Scripts\Weapon\SpellTypes\Projectile.cs" />
+     <Compile Include="Assets\CORE\Scripts\Manager\PlayerManager.cs" />
      <None Include="Assets\Realistic Glitches Lite\Assets\Shaders\BleedingColors.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

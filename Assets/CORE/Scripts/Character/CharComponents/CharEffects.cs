@@ -15,14 +15,20 @@ public class CharEffects : MonoBehaviour
 
     public bool HitEffect {get; set;}
     public bool DeadEffect { get; set; }
+    public bool ExplodeEffect { get; set; }
 
     private void Start(){
-        HitEffect = false;
-        DeadEffect = false;
+        ResetEffects();
     }
 
+    private void ResetEffects(){
+        HitEffect = false;
+        DeadEffect = false;
+        ExplodeEffect = false;
+    }
 
     public void PlayEffect(int effectIDtoPlay){
+        ResetEffects();
         if(effectIDtoPlay == 1){
             IsPlaying = true;
             spriteRenderer.enabled = true;
@@ -35,6 +41,10 @@ public class CharEffects : MonoBehaviour
 
             spriteRenderer.enabled = true;
             animator.SetTrigger("Hit");
+        }
+        if(effectIDtoPlay == 3){
+            IsPlaying = true;
+            ExplodeEffect = true;
         }
     }
 
