@@ -181,6 +181,8 @@ MonoBehaviour:
   chanceToDrop: 50
   rewards:
   - {fileID: 6238976774763190405, guid: c7c972cdfc0e575479c69c69bd07f35a, type: 3}
+  - {fileID: 6238976774763190405, guid: 4d550162c379bf14c94e68facb6dd48a, type: 3}
+  - {fileID: 6238976774763190405, guid: d13b294dac8377b43b32e6d12adda57d, type: 3}
 --- !u!210 &7634648656312944785
 SortingGroup:
   m_ObjectHideFlags: 0
