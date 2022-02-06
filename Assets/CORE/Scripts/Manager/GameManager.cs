@@ -7,7 +7,7 @@ public class GameManager : Singleton<GameManager>
 {
 
     
-
+    
 
 
     public int currentSceneID = 0;
