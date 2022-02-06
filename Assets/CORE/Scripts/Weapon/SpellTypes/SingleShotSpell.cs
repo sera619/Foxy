@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SingleShotSpell : PlayerSpell
 {
@@ -30,7 +31,7 @@ public class SingleShotSpell : PlayerSpell
        base.RequestShot();
        if (CanCast){
            EvaluateProjectileSpawnPosition();
-           SpawnProjectile(projectileSpawnPosition);
+           SpawnProjectile(ProjectileSpawnPosition);
        }  
     }
 
@@ -50,8 +51,7 @@ public class SingleShotSpell : PlayerSpell
         // spread 
         randomProjectileSpread.z = Random.Range(-projectileSpread.z, projectileSpread.z);
         Quaternion spread = Quaternion.Euler(randomProjectileSpread);
-        Vector2 newDirection = spread * transform.right * -1;
-        projectile.SetDirection(newDirection, transform.rotation);
+        projectile.SetDirection(transform.position , transform.rotation);
 
         CanCast = false;
 
@@ -59,7 +59,7 @@ public class SingleShotSpell : PlayerSpell
     }
 
     private void EvaluateProjectileSpawnPosition(){
-        projectileSpawnPosition = transform.position + transform.rotation * projectileSpawnPosition;
+        ProjectileSpawnPosition = transform.position + transform.rotation * projectileSpawnValue;
     }
 
 
