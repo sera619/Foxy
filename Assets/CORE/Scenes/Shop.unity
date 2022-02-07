@@ -7789,7 +7789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1991747737430053057, guid: 625f17238f505de43a8a1bd1e7ea411c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1991747737430053068, guid: 625f17238f505de43a8a1bd1e7ea411c, type: 3}
       propertyPath: m_Pivot.x
@@ -7997,6 +7997,9 @@ MonoBehaviour:
   playableCharacter: {fileID: 164392685}
   spawnPosition: {fileID: 122575898}
   transitionPlayer: {fileID: 1697400322}
+  levelName: Farmladen
+  leveNameTMP: {fileID: 5009720889944011742}
+  levelInformationPanel: {fileID: 5009720889944011743}
 --- !u!4 &2123406830
 Transform:
   m_ObjectHideFlags: 0
@@ -8344,3 +8347,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0387ab1cf618da48bc84a6b039976dd, type: 3}
+--- !u!114 &5009720889944011742 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4621578437942913326, guid: b0387ab1cf618da48bc84a6b039976dd, type: 3}
+  m_PrefabInstance: {fileID: 5009720889944011741}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &5009720889944011743 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5398775392520803515, guid: b0387ab1cf618da48bc84a6b039976dd, type: 3}
+  m_PrefabInstance: {fileID: 5009720889944011741}
+  m_PrefabAsset: {fileID: 0}

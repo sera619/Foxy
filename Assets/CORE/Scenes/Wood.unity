@@ -89585,7 +89585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1991747737430053057, guid: 625f17238f505de43a8a1bd1e7ea411c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1991747737430053068, guid: 625f17238f505de43a8a1bd1e7ea411c, type: 3}
       propertyPath: m_Pivot.x
@@ -90158,12 +90158,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5009720889884404901, guid: b0387ab1cf618da48bc84a6b039976dd, type: 3}
+      propertyPath: playerName
+      value: FoxyRox
+      objectReference: {fileID: 0}
     - target: {fileID: 5009720889884404906, guid: b0387ab1cf618da48bc84a6b039976dd, type: 3}
       propertyPath: m_Name
       value: UIManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0387ab1cf618da48bc84a6b039976dd, type: 3}
+--- !u!114 &1421979588 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4621578437942913326, guid: b0387ab1cf618da48bc84a6b039976dd, type: 3}
+  m_PrefabInstance: {fileID: 1421979587}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1421979589 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5398775392520803515, guid: b0387ab1cf618da48bc84a6b039976dd, type: 3}
+  m_PrefabInstance: {fileID: 1421979587}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1422243784
 GameObject:
   m_ObjectHideFlags: 0
@@ -93516,6 +93536,9 @@ MonoBehaviour:
   playableCharacter: {fileID: 769049749}
   spawnPosition: {fileID: 122575898}
   transitionPlayer: {fileID: 1289460709}
+  levelName: Finsterwald
+  leveNameTMP: {fileID: 1421979588}
+  levelInformationPanel: {fileID: 1421979589}
 --- !u!4 &2123406830
 Transform:
   m_ObjectHideFlags: 0
