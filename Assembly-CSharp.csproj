@@ -136,6 +136,7 @@
      <Compile Include="Assets\CORE\Scripts\Manager\Shop\Shop.cs" />
      <Compile Include="Assets\CORE\Scripts\WorldComponents\Collectables\ShieldUp.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
+     <Compile Include="Assets\CORE\Scripts\Manager\PlayerManager.cs" />
      <Compile Include="Assets\CodeMonkey\MonoBehaviours\ComponentActions.cs" />
      <Compile Include="Assets\Standards\FSM\StateMachine.cs" />
      <Compile Include="Assets\CORE\Scripts\Character\CharComponents\CharAttack.cs" />
@@ -162,7 +163,6 @@
      <Compile Include="Assets\CodeMonkey\CMDebug.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
      <Compile Include="Assets\CodeMonkey\Utils\FunctionPeriodic.cs" />
-     <Compile Include="Assets\CORE\Scripts\Manager\PlayerManager.cs" />
      <None Include="Assets\Realistic Glitches Lite\Assets\Shaders\BleedingColors.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
