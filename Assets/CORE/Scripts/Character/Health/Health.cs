@@ -18,6 +18,10 @@ public class Health : MonoBehaviour
     [Header("Mana")]
     [SerializeField] private float initMana = 10f;
     [SerializeField] private float maxMana = 10f;
+
+    [Header("Exp")]
+    [SerializeField] private int initXp = 0;
+    [SerializeField] private int maxXp = 20;
   
     [Header("Settings")]
     [SerializeField] private bool destroyObject;
@@ -36,7 +40,10 @@ public class Health : MonoBehaviour
     public float CurrentHealth { get; set; }
     public float CurrentShield { get; set; }
     public float CurrentMana { get; set; }
+    public float CurrentXP { get; set; }
+    public float CurrentMaxXP { get; set; }
 
+    public int CurrentLevel { get; set; }
     protected virtual void Awake(){
         character = GetComponent<Character>();
         controller = GetComponent<CharController>();
@@ -49,11 +56,18 @@ public class Health : MonoBehaviour
         CurrentHealth = initHealth;
         CurrentShield = initShield;
         CurrentMana = initMana;
+        
 
         if(character != null){
             isPlayer = character.CharType == Character.CharTypes.Player;
         }
-       
+        if(isPlayer && SaveLoad.SaveExists("PlayerLevel")){
+            CurrentLevel = SaveLoad.Load<int>("PlayerLevel");
+            CurrentXP = SaveLoad.Load<float>("PlayerCurrentExp");
+            CurrentMaxXP = SaveLoad.Load<float>("PlayerCurrentMaxExp");
+            UpdatePlayerExp();
+            UpdatePlayerLevel();
+        }
         UpdateCharacterHealth();
 
     }
@@ -71,6 +85,21 @@ public class Health : MonoBehaviour
         }
     }
 
+    
+    private void LevelUp(){
+        CurrentXP = 0;
+        maxXp = maxXp * 2;
+        UpdatePlayerExp();
+        UpdatePlayerLevel();
+
+    }
+    public void GetXP(float amount){
+        CurrentXP +=  amount;
+        if (CurrentXP == maxXp){
+            LevelUp();
+        }   
+        UpdatePlayerExp();
+    }
     public void GainHealth(int amount){
         CurrentHealth = Mathf.Min(CurrentHealth + amount , maxHealth);
         UpdateCharacterHealth();
@@ -159,6 +188,23 @@ public class Health : MonoBehaviour
     private void DestroyObject(){
         gameObject.SetActive(false);
     }
+
+    private void UpdatePlayerLevel(){
+        if(character != null && character.CharType == Character.CharTypes.Player){
+            SaveLoad.Save<float>(CurrentLevel, "PlayerLevel");
+            UIManager.Instance.UpdatePlayerLevel(CurrentLevel, true);
+        }
+    }
+
+
+    private void UpdatePlayerExp(){
+        if(character != null && character.CharType == Character.CharTypes.Player){
+            SaveLoad.Save<float>(CurrentXP, "PlayerCurrentExp");
+            SaveLoad.Save<float>(CurrentMaxXP, "PlayerCurrentMaxExp");
+            UIManager.Instance.UpdatePlayerExp(CurrentXP, maxXp,true);
+        }
+    }
+
     private void UpdateCharacterHealth(){
 
         //Ene
