@@ -36,10 +36,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Standards\FSM\Editor\CreateState.cs" />
-     <Compile Include="Assets\EntroPi\Cloud Shadows\Scripts\Editor\CloudLayersEditor.cs" />
-     <Compile Include="Assets\EntroPi\Cloud Shadows\Scripts\Editor\EditorUtil.cs" />
      <Compile Include="Assets\EntroPi\Cloud Shadows\Scripts\Editor\CloudShadowsEditor.cs" />
+     <Compile Include="Assets\Standards\FSM\Editor\CreateState.cs" />
+     <Compile Include="Assets\EntroPi\Cloud Shadows\Scripts\Editor\EditorUtil.cs" />
+     <Compile Include="Assets\EntroPi\Cloud Shadows\Scripts\Editor\CloudLayersEditor.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\1Coding\Codes\C ++\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -272,22 +272,19 @@
         <HintPath>C:\1Coding\Codes\C ++\2020.3.25f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
-        <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\PackageCache\com.unity.collab-proxy@1.15.4\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+        <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\PackageCache\com.unity.collab-proxy@1.15.12\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
-        <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\PackageCache\com.unity.collab-proxy@1.15.4\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+        <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\PackageCache\com.unity.collab-proxy@1.15.12\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="unityplastic">
-        <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\PackageCache\com.unity.collab-proxy@1.15.4\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
+        <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\PackageCache\com.unity.collab-proxy@1.15.12\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
     </Reference>
     <Reference Include="log4netPlastic">
-        <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\PackageCache\com.unity.collab-proxy@1.15.4\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+        <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\PackageCache\com.unity.collab-proxy@1.15.12\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.NRefactory">
         <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\PackageCache\com.unity.render-pipelines.core@10.7.0\Editor\ShaderGenerator\ICSharpCode.NRefactory.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-        <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
         <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
@@ -757,8 +754,14 @@
     <Reference Include="Unity.2D.Common.Runtime">
         <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.HighDefinition.Config.Runtime">
+        <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\ScriptAssemblies\Unity.RenderPipelines.HighDefinition.Config.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.ScriptableBuildPipeline">
         <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.SpriteShape.Editor">
+        <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ScriptableBuildPipeline.Editor">
         <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
@@ -771,9 +774,6 @@
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
         <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-        <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

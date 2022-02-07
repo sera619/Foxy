@@ -51,7 +51,7 @@ public class SingleShotSpell : PlayerSpell
         // spread 
         randomProjectileSpread.z = Random.Range(-projectileSpread.z, projectileSpread.z);
         Quaternion spread = Quaternion.Euler(randomProjectileSpread);
-        projectile.SetDirection(transform.position , transform.rotation);
+        projectile.SetDirection(ProjectileSpawnPosition , transform.rotation);
 
         CanCast = false;
 

@@ -391,6 +391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellToUse: {fileID: 7256389000534871883, guid: f4688d0498bba994b961cebd084295cb, type: 3}
   spellHolderPosition: {fileID: 1893121751566874362}
+  fireCast: {fileID: 0}
 --- !u!1 &3118755754871955807
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,7 +419,7 @@ Transform:
   m_GameObject: {fileID: 3118755754871955807}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 3118755754246289749}
   m_RootOrder: 2

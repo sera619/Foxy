@@ -45,6 +45,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
      <Compile Include="Assets\CORE\Scripts\Character\CharComponents\CharGold.cs" />
      <Compile Include="Assets\CodeMonkey\Utils\World_Mesh.cs" />
+     <Compile Include="Assets\EntroPi\Cloud Shadows\Scripts\Util.cs" />
      <Compile Include="Assets\CORE\Scripts\Utility\CollectableItemset.cs" />
      <Compile Include="Assets\CORE\Scripts\WorldComponents\Interactable\Chest.cs" />
      <Compile Include="Assets\Realistic Glitches Lite\Assets\Scripts\ShaderToTexture.cs" />
@@ -89,6 +90,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
      <Compile Include="Assets\CORE\Scripts\Utility\Path.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
+     <Compile Include="Assets\EntroPi\Cloud Shadows\Scripts\CloudShadows.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
      <Compile Include="Assets\CORE\Scripts\Character\CharController.cs" />
      <Compile Include="Assets\CORE\Scripts\AI\EnemyController.cs" />
@@ -99,6 +101,7 @@
      <Compile Include="Assets\CORE\Scripts\WorldComponents\Collectables.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
      <Compile Include="Assets\CORE\Scripts\Character\CharComponents\CharDash.cs" />
+     <Compile Include="Assets\EntroPi\Cloud Shadows\Scripts\CloudLayer.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
      <Compile Include="Assets\CORE\Scripts\Manager\InventoryManager.cs" />
      <Compile Include="Assets\CodeMonkey\Utils\UI_TextComplex.cs" />
@@ -130,6 +133,7 @@
      <Compile Include="Assets\CORE\Scripts\Utility\GameEvents.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
      <Compile Include="Assets\CORE\Scripts\Character\Health\Health.cs" />
+     <Compile Include="Assets\EntroPi\Cloud Shadows\Scripts\CloudLayerData.cs" />
      <Compile Include="Assets\CORE\Scripts\WorldComponents\Interactable\DoorGarden.cs" />
      <Compile Include="Assets\CORE\Scripts\Manager\TeleportManager.cs" />
      <Compile Include="Assets\Realistic Glitches Lite\Assets\Scripts\ShaderEffect_CRT.cs" />
@@ -138,6 +142,7 @@
      <Compile Include="Assets\CORE\Scripts\Character\CharComponents\CharRun.cs" />
      <Compile Include="Assets\Beautiful Progress Bar Free - CYKO\Scripts\SliderScripts.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
+     <Compile Include="Assets\CORE\Scripts\Character\CharComponents\CharDirection.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
      <Compile Include="Assets\CodeMonkey\Utils\UI_Bar.cs" />
      <Compile Include="Assets\CORE\Scripts\Manager\LevelManager.cs" />
@@ -148,6 +153,7 @@
      <Compile Include="Assets\CORE\Scripts\Character\CharComponents\CharEffects.cs" />
      <Compile Include="Assets\CORE\Scripts\Utility\PlayerDetector.cs" />
      <Compile Include="Assets\CORE\Scripts\Manager\Shop\Shop.cs" />
+     <Compile Include="Assets\EntroPi\Cloud Shadows\Scripts\CloudLayers.cs" />
      <Compile Include="Assets\CORE\Scripts\Manager\PlayerManager.cs" />
      <Compile Include="Assets\CodeMonkey\MonoBehaviours\ComponentActions.cs" />
      <Compile Include="Assets\CORE\Scripts\Character\CharComponents\CharAttack.cs" />
@@ -163,11 +169,6 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\CodeMonkey\CMDebug.cs" />
      <Compile Include="Assets\CodeMonkey\Utils\FunctionPeriodic.cs" />
-     <Compile Include="Assets\EntroPi\Cloud Shadows\Scripts\CloudShadows.cs" />
-     <Compile Include="Assets\EntroPi\Cloud Shadows\Scripts\CloudLayer.cs" />
-     <Compile Include="Assets\EntroPi\Cloud Shadows\Scripts\CloudLayerData.cs" />
-     <Compile Include="Assets\EntroPi\Cloud Shadows\Scripts\Util.cs" />
-     <Compile Include="Assets\EntroPi\Cloud Shadows\Scripts\CloudLayers.cs" />
      <None Include="Assets\Realistic Glitches Lite\Assets\Shaders\BleedingColors.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
@@ -425,9 +426,6 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
         <HintPath>C:\1Coding\Codes\C ++\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-        <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:\1Coding\Codes\C ++\2020.3.25f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -885,8 +883,14 @@
     <Reference Include="Unity.2D.Common.Runtime">
         <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.HighDefinition.Config.Runtime">
+        <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\ScriptAssemblies\Unity.RenderPipelines.HighDefinition.Config.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.ScriptableBuildPipeline">
         <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.SpriteShape.Editor">
+        <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ScriptableBuildPipeline.Editor">
         <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
@@ -899,9 +903,6 @@
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
         <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-        <HintPath>C:\1Coding\Codes\C Shard\Foxy\Foxy\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

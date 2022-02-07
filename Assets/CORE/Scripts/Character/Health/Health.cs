@@ -91,6 +91,9 @@ public class Health : MonoBehaviour
 
     
     private void LevelUp(){
+        if(!isPlayer){
+            return;
+        }
         charEffects.PlayEffect(4);
         CurrentXP = 0;
         CurrentLevel +=1;
