@@ -287,6 +287,8 @@ MonoBehaviour:
   maxShield: 4
   initMana: 10
   maxMana: 10
+  initXp: 0
+  maxXp: 20
   destroyObject: 0
 --- !u!114 &3118755754246289742
 MonoBehaviour:
@@ -387,7 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c8433a55f3278548af1311f44bccf4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellToUse: {fileID: 0}
+  spellToUse: {fileID: 7256389000534871883, guid: f4688d0498bba994b961cebd084295cb, type: 3}
   spellHolderPosition: {fileID: 1893121751566874362}
 --- !u!1 &3118755754871955807
 GameObject:
