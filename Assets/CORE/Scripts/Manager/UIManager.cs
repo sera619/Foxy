@@ -28,8 +28,8 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private Image expBar;
     [SerializeField] private TextMeshProUGUI currentExpTMP;
 
-
-
+    [Header("Level UP Settings")]
+    [SerializeField] private GameObject levelupPanel;
 
     [Header("DeathScreen")]
     [SerializeField] private GameObject deathScreen;
@@ -53,6 +53,7 @@ public class UIManager : Singleton<UIManager>
 
 
 
+    public GameObject LevelUpPanel => levelupPanel;
 
 
     private string currentPlayerName;
@@ -149,5 +150,28 @@ public class UIManager : Singleton<UIManager>
 
         }
     }
+
+    public void ShowLvlupPanel(){
+        levelupPanel.SetActive(true);
+    }
+
+    public void HideLvlupPanel(){
+        levelupPanel.SetActive(false);
+    }
+    public void GainBonusMana(){
+        if(!isPlayer){
+            return;
+        }
+        HideLvlupPanel();
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Health>().GainManaBonus();
+    }
+    public void GainBonusHealth(){
+        if(!isPlayer){
+            return;
+        }
+        HideLvlupPanel();
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Health>().GainHealthBonus();
+    }
+
 
 }
