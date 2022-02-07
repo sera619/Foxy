@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -27,15 +28,16 @@ public class Health : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private bool isPlayer;
     private bool shieldBroken;
-    private CharEffects charEffects;
 
+    private CharEffects charEffects;
+    private GameManager gameManager;
     private EnemyHealth enemyHealth;
+
     public float CurrentHealth { get; set; }
     public float CurrentShield { get; set; }
     public float CurrentMana { get; set; }
-    private GameManager gameManager;
 
-    private void Awake(){
+    protected virtual void Awake(){
         character = GetComponent<Character>();
         controller = GetComponent<CharController>();
         myCollider2D = GetComponent<Collider2D>();
@@ -51,12 +53,12 @@ public class Health : MonoBehaviour
         if(character != null){
             isPlayer = character.CharType == Character.CharTypes.Player;
         }
-
+       
         UpdateCharacterHealth();
 
     }
-
-    private void Update(){
+ 
+    protected virtual void Update(){
         if (charEffects != null){
             StartCoroutine(Timer());
         }
@@ -172,6 +174,8 @@ public class Health : MonoBehaviour
         }
     }
 
+
+
     private IEnumerator Timer(){
             if(charEffects.DeadEffect){
                 yield return new WaitForSeconds(1);
@@ -188,6 +192,12 @@ public class Health : MonoBehaviour
                 charEffects.HitEffect = false;
                 charEffects.SpriteRenderer.enabled = false;
             } 
+            if(charEffects.ExplodeEffect){
+                yield return new WaitForSeconds(1);
+                charEffects.IsPlaying = false;
+                charEffects.ExplodeEffect = false;
+                charEffects.SpriteRenderer.enabled = false;
+            }
     }
 
 }
