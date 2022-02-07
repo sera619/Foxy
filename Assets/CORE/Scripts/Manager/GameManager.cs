@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
-
+    [SerializeField]public Transform startPosition;
+    [SerializeField]public Transform teleportPositon;
     
     
 
