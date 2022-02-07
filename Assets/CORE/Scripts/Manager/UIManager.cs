@@ -25,6 +25,10 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private TextMeshProUGUI currentShieldTMP;
     [SerializeField] private Image manaBar;
     [SerializeField] private TextMeshProUGUI currentManaTMP;
+    [SerializeField] private Image expBar;
+    [SerializeField] private TextMeshProUGUI currentExpTMP;
+
+
 
 
     [Header("DeathScreen")]
@@ -44,6 +48,13 @@ public class UIManager : Singleton<UIManager>
     private float playerCurrentMana;
     private float playerMaxMana;
 
+    private float playerCurrentExp;
+    private float playerMaxExp;
+
+
+
+
+
     private string currentPlayerName;
     private int currentPlayerLevel;
 
@@ -53,6 +64,23 @@ public class UIManager : Singleton<UIManager>
 
     private float bossCurrentHealth;
     private float bossMaxHealth;
+
+
+    private void Start(){
+        if (isPlayer){
+            if(SaveLoad.SaveExists("PlayerName")){
+                currentPlayerName = SaveLoad.Load<string>("PlayerName");
+            }
+            if(SaveLoad.SaveExists("PlayerCurrentXP")){
+                playerCurrentExp = SaveLoad.Load<float>("PlayerCurrentExp");
+                playerMaxExp = SaveLoad.Load<float>("PlayerCurrentMaxXP");
+            }
+            if(SaveLoad.SaveExists("PlayerLevel")){
+                currentPlayerLevel = SaveLoad.Load<int>("PlayerLevel");
+            }
+        }
+        
+    }
 
     private void Update() {
         InternalUpdate();
@@ -75,17 +103,25 @@ public class UIManager : Singleton<UIManager>
             deathScreen.SetActive(false);
         }
     }
+    public void UpdatePlayerLevel(int level, bool isThisPlayer){
+        currentPlayerLevel = level;
+        isPlayer = isThisPlayer;
+    }
 
-
-    public void UpdatePlayerInfo(string name , int playerLevel,bool isThisPlayer){
-        currentPlayerName= name;
-        currentPlayerLevel = playerLevel;
+    public void UpdatePlayerExp(float xp,float maxXP,bool isThisPlayer){
+        playerCurrentExp =  xp;
+        playerMaxExp = maxXP;
         isPlayer = isThisPlayer;
     }
 
     public void UpdateMana(float currentMana, float maxMana, bool isThisPlayer){
         playerMaxMana = maxMana;
         playerCurrentMana =currentMana;
+        isPlayer = isThisPlayer;
+    }
+
+    public void UpdatePlayername(string name, bool isThisPlayer){
+        currentPlayerName = name;
         isPlayer = isThisPlayer;
     }
     private void InternalUpdate(){
@@ -101,9 +137,15 @@ public class UIManager : Singleton<UIManager>
             //Manabar Update
             manaBar.fillAmount = Mathf.Lerp(manaBar.fillAmount, playerCurrentMana / playerMaxMana, 10f * Time.deltaTime);
             currentManaTMP.text = playerCurrentMana.ToString() + " / " + playerMaxMana.ToString();
+            
+            //EXPbar Update
+            expBar.fillAmount = Mathf.Lerp(expBar.fillAmount,playerCurrentExp / playerMaxExp, 10f * Time.deltaTime);
+            currentExpTMP.text = playerCurrentExp.ToString() + " / " + playerMaxExp.ToString();
+            
+            
             //level/Name Update
-            nameField.text = playerName;
-            levelField.text = levelValue.ToString();
+            nameField.text = currentPlayerName;
+            levelField.text = currentPlayerLevel.ToString();
 
         }
     }
