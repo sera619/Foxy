@@ -8,15 +8,17 @@ using UnityEngine.UI;
 
 public class StartView : MonoBehaviour
 {
-
+    [Header("Name Settings")]
     [SerializeField] private GameObject nameGetPanel;
     [SerializeField] private GameObject nameCheckPanel;
     [SerializeField] private GameObject menuPanel;
     [SerializeField] private GameObject namePanel;
-
     [SerializeField] private TextMeshProUGUI checkNameTMP;
-    
     [SerializeField] private TMP_InputField choosenName;
+
+
+    [Header("Help Settings")]
+    [SerializeField] private GameObject helpPanel;
 
     private string playerName;
     
@@ -66,7 +68,29 @@ public class StartView : MonoBehaviour
         
     }
 
+    public void ShowHelp(){
+        helpPanel.SetActive(true);
+        menuPanel.SetActive(false);
+    }
 
+    public void HideHelp() {
+        helpPanel.SetActive(false);
+        menuPanel.SetActive(true);
+    }
+
+
+    public void GihubLink(){
+        Application.OpenURL("http://github.com/sera619/Foxy");
+    }
+
+    public void EmailLink(){
+        string email = "Seraphinus619@gmail.com";
+        Application.OpenURL("mailto:"+email);
+    }
+
+    public void HomepageLink(){
+        Application.OpenURL("https://sera619.github.io/FOX-TALE-Alpha/");
+    }
 
 
 }
