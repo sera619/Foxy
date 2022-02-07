@@ -31,6 +31,7 @@ public class PauseManager : MonoBehaviour
     public void GoMenu(){
         PauseGame();
         SceneManager.LoadScene(0);
+        GameManager.Instance.Save();
     }
 
 
