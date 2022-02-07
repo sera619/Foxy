@@ -9,6 +9,7 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private GameObject PauseMenu;
     private bool gamePaused { set; get;}
 
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)){
