@@ -22,6 +22,7 @@ public class Health : MonoBehaviour
     [Header("Exp")]
     [SerializeField] private int initXp = 0;
     [SerializeField] private int maxXp = 20;
+
   
     [Header("Settings")]
     [SerializeField] private bool destroyObject;
@@ -36,6 +37,8 @@ public class Health : MonoBehaviour
     private CharEffects charEffects;
     private GameManager gameManager;
     private EnemyHealth enemyHealth;
+    private float healthBonus = 5;
+    private float manaBonus = 5;
 
     public float CurrentHealth { get; set; }
     public float CurrentShield { get; set; }
@@ -80,26 +83,48 @@ public class Health : MonoBehaviour
             return;
         }
         if(Input.GetKeyDown(KeyCode.L)){
-            TakeDamage(2);
-            TakeMana(2);
+            //TakeDamage(2);
+            //TakeMana(2);
+            GetXP(2);
         }
     }
 
     
     private void LevelUp(){
+        charEffects.PlayEffect(4);
         CurrentXP = 0;
-        maxXp = maxXp * 2;
-        UpdatePlayerExp();
+        CurrentLevel +=1;
+        CurrentMaxXP = CurrentMaxXP * 2;
+        maxShield += 2;
+        maxMana +=  5;
+        maxHealth += 5;
+        CurrentHealth = maxHealth;
+        CurrentMana = maxMana;
+        CurrentShield= maxShield;
+        UpdateCharacterHealth();
         UpdatePlayerLevel();
+        UpdatePlayerExp();
 
     }
     public void GetXP(float amount){
         CurrentXP +=  amount;
-        if (CurrentXP == maxXp){
+        UpdatePlayerExp();
+        if (CurrentXP == CurrentMaxXP){
             LevelUp();
         }   
-        UpdatePlayerExp();
     }
+
+    public void GainManaBonus(){
+        maxMana += manaBonus;
+        CurrentMana = maxMana;
+        UpdateCharacterHealth();
+    }
+    public void GainHealthBonus(){
+        maxHealth += healthBonus;
+        CurrentHealth = maxHealth;
+        UpdateCharacterHealth();
+    }
+
     public void GainHealth(int amount){
         CurrentHealth = Mathf.Min(CurrentHealth + amount , maxHealth);
         UpdateCharacterHealth();
@@ -162,6 +187,9 @@ public class Health : MonoBehaviour
             if(character.CharType == Character.CharTypes.Player){
                 gameManager.Save();
             }
+            if(character.CharType == Character.CharTypes.AI){
+                FindObjectOfType<CharPlayer>().GetComponent<Health>().GetXP(2);
+            }
         }
         if(destroyObject){
             DestroyObject();
@@ -201,7 +229,7 @@ public class Health : MonoBehaviour
         if(character != null && character.CharType == Character.CharTypes.Player){
             SaveLoad.Save<float>(CurrentXP, "PlayerCurrentExp");
             SaveLoad.Save<float>(CurrentMaxXP, "PlayerCurrentMaxExp");
-            UIManager.Instance.UpdatePlayerExp(CurrentXP, maxXp,true);
+            UIManager.Instance.UpdatePlayerExp(CurrentXP, CurrentMaxXP,true);
         }
     }
 
@@ -243,6 +271,13 @@ public class Health : MonoBehaviour
                 charEffects.IsPlaying = false;
                 charEffects.ExplodeEffect = false;
                 charEffects.SpriteRenderer.enabled = false;
+            }
+            if(charEffects.LvlUpEffect){
+                yield return new WaitForSeconds(0.6f);
+                charEffects.IsPlaying = false;
+                charEffects.LvlUpEffect = false;
+                charEffects.SpriteRenderer.enabled = false;
+                UIManager.Instance.ShowLvlupPanel();
             }
     }
 
