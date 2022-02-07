@@ -12,8 +12,12 @@ public class CharSpell : CharComponents
     [SerializeField] private PlayerSpell spellToUse;
     [SerializeField] private Transform spellHolderPosition;
 
+    [SerializeField] private ParticleSystem fireCast;
     public PlayerSpell CurrentSpell { get; set; }
     public PlayerSpell SecondSpell { get; set; }
+
+
+
     protected override void Start()
     {
         base.Start();
@@ -46,7 +50,11 @@ public class CharSpell : CharComponents
             return;
         }
         CurrentSpell.UseSpell();
+
         if(character.CharType == Character.CharTypes.Player){
+            if(fireCast != null){
+                fireCast.Play();
+            }
             OnStartCasting?.Invoke();
             //TODO UI MANAER Ammo
         }
