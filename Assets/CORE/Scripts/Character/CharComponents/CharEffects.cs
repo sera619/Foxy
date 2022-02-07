@@ -17,6 +17,8 @@ public class CharEffects : MonoBehaviour
     public bool DeadEffect { get; set; }
     public bool ExplodeEffect { get; set; }
 
+    public bool LvlUpEffect { get; set; }
+
     private void Start(){
         ResetEffects();
     }
@@ -45,6 +47,16 @@ public class CharEffects : MonoBehaviour
         if(effectIDtoPlay == 3){
             IsPlaying = true;
             ExplodeEffect = true;
+
+            spriteRenderer.enabled = true;
+            animator.SetTrigger("Explode");
+        }
+        if(effectIDtoPlay == 4){
+            IsPlaying = true;
+            LvlUpEffect = true;
+
+            spriteRenderer.enabled = true;
+            animator.SetTrigger("LvlUp");
         }
     }
 
