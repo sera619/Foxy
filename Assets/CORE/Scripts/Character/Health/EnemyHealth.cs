@@ -27,6 +27,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nameTextfield;
     [SerializeField] private TextMeshProUGUI lvlTextfield;
     [SerializeField] private string enemyName;
+    [SerializeField] private int enemyLevel;
 
     private Health enemyHealth;
     private float enemyCurrentHealth;
@@ -36,13 +37,13 @@ public class EnemyHealth : MonoBehaviour
     
     private float enemyCurrentMana;
     private float enemyMaxMana;
-
+    private CharEffects charEffects;
 
 
     private void Start(){
         enemyHealth = GetComponent<Health>();
         healthPanel.SetActive(true);
-
+        charEffects = GetComponent<CharEffects>();
     }
     
 
@@ -54,6 +55,10 @@ public class EnemyHealth : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("PlayerWeapon")){
             TakeDamage(other.GetComponent<PlayerSword>().SwordDamage);
+        }
+        if(other.CompareTag("PlayerSpell")){
+            TakeDamage(other.GetComponent<Projectile>().SpellDamage);
+            charEffects.PlayEffect(6);
         }
     }
 
@@ -79,7 +84,7 @@ public class EnemyHealth : MonoBehaviour
             manaBar.fillAmount = Mathf.Lerp(manaBar.fillAmount, enemyCurrentMana / enemyMaxMana , 10f * Time.deltaTime);
             manaText.text = enemyCurrentMana.ToString() + " / " + enemyMaxMana.ToString();
             
-            lvlTextfield.text = "3";
+            lvlTextfield.text = enemyLevel.ToString();
             nameTextfield.text = enemyName; 
             
         }
