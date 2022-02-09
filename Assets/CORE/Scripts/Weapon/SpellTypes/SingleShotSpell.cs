@@ -8,7 +8,8 @@ public class SingleShotSpell : PlayerSpell
 
     [SerializeField] private Vector3 projectileSpawnPosition;
     [SerializeField] private Vector3 projectileSpread;
-
+    [SerializeField] private int spellDamage = 1;
+    
 
 
     public Vector3 ProjectileSpawnPosition { get; set; }
@@ -46,12 +47,14 @@ public class SingleShotSpell : PlayerSpell
         // get reference to projectile
         Projectile projectile = projectilePooled.GetComponent<Projectile>();
         projectile.EnableProjectile();
+        projectile.SetSpellDamage(spellDamage);
         projectile.ProjectileOwner = SpellOwner;
 
         // spread 
+        Vector2 newDirection = new Vector2(SpellOwner.CharAnimator.GetFloat("LastHorizontal"), SpellOwner.CharAnimator.GetFloat("LastVertical"));
         randomProjectileSpread.z = Random.Range(-projectileSpread.z, projectileSpread.z);
         Quaternion spread = Quaternion.Euler(randomProjectileSpread);
-        projectile.SetDirection(ProjectileSpawnPosition , transform.rotation);
+        projectile.SetDirection(newDirection , transform.rotation);
 
         CanCast = false;
 
@@ -59,7 +62,7 @@ public class SingleShotSpell : PlayerSpell
     }
 
     private void EvaluateProjectileSpawnPosition(){
-        ProjectileSpawnPosition = transform.position + transform.rotation * projectileSpawnValue;
+        ProjectileSpawnPosition = transform.position + transform.rotation * projectileSpawnPosition;
     }
 
 
