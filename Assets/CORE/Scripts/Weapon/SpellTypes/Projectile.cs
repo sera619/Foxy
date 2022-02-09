@@ -7,7 +7,9 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private float speed = 60f;
     [SerializeField] private float acceleration = 0f;
+ 
 
+    public int SpellDamage { get; set; }
     public Vector2 Direction { get; set; }
     public float Speed { get; set; }
     public Character ProjectileOwner { get; set; }
@@ -48,6 +50,9 @@ public class Projectile : MonoBehaviour
         spriteRenderer.enabled = false;
     }
 
+    public void SetSpellDamage(int damage){
+        SpellDamage = damage;
+    } 
 
     public void DisableProjectile(){
         canMove = false;
