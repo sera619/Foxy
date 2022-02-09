@@ -158,8 +158,10 @@ public class Health : MonoBehaviour
         if(CurrentHealth <= 0){
             return;
         }
-        if(charEffects !=null)
+        if(charEffects !=null){
             charEffects.PlayEffect(2);
+
+        }
         
         if (!shieldBroken && character != null && initShield > 0){
             CurrentShield -= damage;
@@ -281,6 +283,19 @@ public class Health : MonoBehaviour
                 charEffects.LvlUpEffect = false;
                 charEffects.SpriteRenderer.enabled = false;
                 UIManager.Instance.ShowLvlupPanel();
+            }
+            if(charEffects.FireCastEffect){
+                yield return new WaitForSeconds(1);
+                charEffects.IsPlaying = false;
+                charEffects.FireCastEffect = false;
+                charEffects.SpriteRenderer.enabled = false;
+
+            }
+            if(charEffects.IceCastEffect){
+                yield return new WaitForSeconds(1);
+                charEffects.IsPlaying = false;
+                charEffects.IceCastEffect = false;
+                charEffects.SpriteRenderer.enabled = false;
             }
     }
 
