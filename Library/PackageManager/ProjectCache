@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637798640741916851
-    m_Hash: 137816177
+      ticks: 637798712173449913
+    m_Hash: 3546237159
   m_LockFileStatus:
     m_FilePath: C:/1Coding/Codes/C Shard/Foxy/Foxy/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637798640753127763
-    m_Hash: 3511598119
+      ticks: 637798712173449913
+    m_Hash: 3612574766
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -4433,8 +4433,8 @@ m_PackageAssets:
       m_ContentTrackingEnabled: 1
       m_ModificationDate:
         serializedVersion: 2
-        ticks: 637746039880000000
-      m_Hash: 1372045939
+        ticks: 637798712173429891
+      m_Hash: 3169004558
     - m_FilePath: C:\1Coding\Codes\C Shard\Foxy\Foxy\LocalPackages\com.unity.render-pipelines.high-definition-config
       m_PathExists: 1
       m_ContentTrackingEnabled: 1

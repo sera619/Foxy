@@ -134,6 +134,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
      <Compile Include="Assets\CORE\Scripts\Character\Health\Health.cs" />
      <Compile Include="Assets\EntroPi\Cloud Shadows\Scripts\CloudLayerData.cs" />
+     <Compile Include="Assets\CORE\Scripts\UI\DayCircle.cs" />
      <Compile Include="Assets\CORE\Scripts\WorldComponents\Interactable\DoorGarden.cs" />
      <Compile Include="Assets\CORE\Scripts\Manager\TeleportManager.cs" />
      <Compile Include="Assets\Realistic Glitches Lite\Assets\Scripts\ShaderEffect_CRT.cs" />
@@ -169,6 +170,21 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\CodeMonkey\CMDebug.cs" />
      <Compile Include="Assets\CodeMonkey\Utils\FunctionPeriodic.cs" />
+     <Compile Include="Assets\CORE\Scripts\AI\StateController.cs" />
+     <Compile Include="Assets\CORE\Scripts\AI\AICore\AIAction.cs" />
+     <Compile Include="Assets\CORE\Scripts\AI\AICore\AIDecision.cs" />
+     <Compile Include="Assets\CORE\Scripts\AI\AICore\AiTransition.cs" />
+     <Compile Include="Assets\CORE\Scripts\AI\AICore\AIState.cs" />
+     <Compile Include="Assets\CORE\Scripts\AI\AICore\Actions\ActionFollow.cs" />
+     <Compile Include="Assets\CORE\Scripts\AI\AICore\Actions\ActionIdle.cs" />
+     <Compile Include="Assets\CORE\Scripts\AI\AICore\Actions\ActionPatrol.cs" />
+     <Compile Include="Assets\CORE\Scripts\AI\AICore\Actions\ActionWander.cs" />
+     <Compile Include="Assets\CORE\Scripts\AI\AICore\Actions\ActionMeleeAttack.cs" />
+     <Compile Include="Assets\CORE\Scripts\AI\AICore\Actions\ActionShoot.cs" />
+     <Compile Include="Assets\CORE\Scripts\AI\AICore\Decisions\DecisionRangeToAttack.cs" />
+     <Compile Include="Assets\CORE\Scripts\AI\AICore\Decisions\DecisionDetect.cs" />
+     <Compile Include="Assets\CORE\Scripts\AI\AICore\Decisions\DecisionCanSeePlayer.cs" />
+     <Compile Include="Assets\CORE\Scripts\AI\AICore\Decisions\DecisionAttackCompleted.cs" />
      <None Include="Assets\Realistic Glitches Lite\Assets\Shaders\BleedingColors.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
@@ -921,6 +937,10 @@
     <ProjectReference Include="Unity.2D.Tilemap.Extras.Editor.csproj">
       <Project>{456b6da8-0bb6-e65c-fd0d-bdaa3e7dac20}</Project>
       <Name>Unity.2D.Tilemap.Extras.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="AllIn1SpriteShaderAssembly.csproj">
+      <Project>{1a635fbe-5988-e182-8660-9d82a4a95e15}</Project>
+      <Name>AllIn1SpriteShaderAssembly</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

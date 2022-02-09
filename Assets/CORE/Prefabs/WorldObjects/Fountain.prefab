@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4180197006201547471}
   - component: {fileID: 4180197006201547464}
   - component: {fileID: 4180197006201547459}
+  - component: {fileID: 5709034640314351644}
   m_Layer: 0
   m_Name: Fountain
   m_TagString: Untagged
@@ -55,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -154,6 +155,22 @@ SortingGroup:
   m_SortingLayerID: 7610173
   m_SortingLayer: 2
   m_SortingOrder: 1
+--- !u!114 &5709034640314351644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4180197006201547465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc219dcbba90e84b86e2ecf840e0266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 5725305819640465133, guid: 0000000000000000d000000000000000, type: 0}
+  position: -3
+  direction: 1
+  tooltip: 
 --- !u!1 &4180197006340902726
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,7 +221,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

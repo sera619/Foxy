@@ -797,6 +797,10 @@
       <Project>{456b6da8-0bb6-e65c-fd0d-bdaa3e7dac20}</Project>
       <Name>Unity.2D.Tilemap.Extras.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="AllIn1SpriteShaderAssembly.csproj">
+      <Project>{1a635fbe-5988-e182-8660-9d82a4a95e15}</Project>
+      <Name>AllIn1SpriteShaderAssembly</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

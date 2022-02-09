@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - WorldObject
   - EnemyWeapon
+  - PlayerSpell
   layers:
   - Default
   - TransparentFX

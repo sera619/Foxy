@@ -54,6 +54,9 @@ public class CharMovement : CharComponents
 
     public void SetHorizontal(float value){
         horizontalInput = value;
+        if(Mathf.Abs(horizontalInput) > 0.1f){
+            
+        }
     }
 
     public void SetVertical(float value){
