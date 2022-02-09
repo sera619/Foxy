@@ -9,6 +9,7 @@ public class PlayerSpell : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private float timeBtwCasts = 0.5f;
+
     
     [Header("Spell")]
     [SerializeField] private bool useMagazine = true;
@@ -18,7 +19,6 @@ public class PlayerSpell : MonoBehaviour
     [Header("Effects")]
     [SerializeField] private ParticleSystem spellEffect;
 
-    public string SpellName => spellName;
     public Character SpellOwner { get; set; }
     public int CurrentAmmo  { get; set; }
     public SpellAmmo SpellAmmo { get; set;}
@@ -27,7 +27,7 @@ public class PlayerSpell : MonoBehaviour
     public bool UseMagazine => useMagazine;
     public bool CanCast { get; set; }
 
-
+    public string SpellName => spellName;
     private float nextCastTime;
     private CharController controller;
     private Animator animator;
@@ -36,6 +36,7 @@ public class PlayerSpell : MonoBehaviour
     protected virtual void Awake(){
         SpellAmmo = GetComponent<SpellAmmo>();
         //animator = GetComponent<Animator>();
+        
     }
 
     protected virtual void Update(){
