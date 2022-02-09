@@ -18,6 +18,9 @@ public class CharEffects : MonoBehaviour
     public bool ExplodeEffect { get; set; }
 
     public bool LvlUpEffect { get; set; }
+    public bool FireCastEffect { get; set; }  
+    public bool IceCastEffect { get; set; }
+
 
     private void Start(){
         ResetEffects();
@@ -57,6 +60,20 @@ public class CharEffects : MonoBehaviour
 
             spriteRenderer.enabled = true;
             animator.SetTrigger("LvlUp");
+        }
+        if(effectIDtoPlay == 5){
+            IsPlaying = true;
+            FireCastEffect = true;
+
+            spriteRenderer.enabled = true;
+            animator.SetTrigger("FireCast");
+        }
+        if(effectIDtoPlay == 6){
+            IsPlaying = true;
+            IceCastEffect = true;
+
+            spriteRenderer.enabled = true;
+            animator.SetTrigger("IceCast");
         }
     }
 
