@@ -6,13 +6,19 @@ public class CharMovement : CharComponents
 {
 
     [SerializeField] private float walkSpeed = 6f;
+    [SerializeField] private DialogUI dialogUI; 
     public float MoveSpeed { get; set; }
     private readonly int movingParameter = Animator.StringToHash("Move");
-    
+     
+
+
+
+
     protected override void Start()
     {
         base.Start();
         MoveSpeed = walkSpeed;
+        
     }
 
     // Update is called once per frame

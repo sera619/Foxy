@@ -12,6 +12,7 @@ TagManager:
   - WorldObject
   - EnemyWeapon
   - PlayerSpell
+  - NPCQuest
   layers:
   - Default
   - TransparentFX
