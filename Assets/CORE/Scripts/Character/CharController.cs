@@ -7,10 +7,23 @@ public class CharController : MonoBehaviour
     public bool NormalMovement { get; set;}
     public Vector2 CurrentMovement { get; set; }
     private Rigidbody2D myBody;
+    private Character character;
 
     private void Start(){
         NormalMovement = true;
         myBody = GetComponent<Rigidbody2D>();
+        character = GetComponent<Character>();
+        if(character.CharType == Character.CharTypes.Player){
+            DialogManager.Instance.OnCloseDialog += () => StartMovement();
+            DialogManager.Instance.OnShowDialog += () => StopMovement();
+        }
+    }
+
+    public void StopMovement(){
+        NormalMovement = false;
+    }
+    public void StartMovement(){
+        NormalMovement = true;
     }
 
     private void FixedUpdate(){
