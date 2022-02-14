@@ -9,7 +9,8 @@ public class CharMovement : CharComponents
     [SerializeField] private DialogUI dialogUI; 
     public float MoveSpeed { get; set; }
     private readonly int movingParameter = Animator.StringToHash("Move");
-     
+
+    
 
 
 
@@ -39,7 +40,14 @@ public class CharMovement : CharComponents
     }
 
     private void UpdateAnimations(){
+        if (!controller.NormalMovement){
+            return;
+        }
         if (Mathf.Abs(horizontalInput)> 0.1f || Mathf.Abs(verticalInput) > 0.1f){
+            if(character.CharType == Character.CharTypes.Player && charAttack != null && charAttack.isAttacking){
+                return;
+            }
+
             if(character.CharAnimator != null){
                 character.CharAnimator.SetBool(movingParameter, true);
                 character.CharAnimator.SetFloat("Horizontal", horizontalInput);
