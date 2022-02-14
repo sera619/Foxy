@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Quest : MonoBehaviour
+[System.Serializable]
+public class Quest 
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Quest Settings")]
+    public string QuestName;
+    public string QuestDescription;
+    public int ExpReward;
+    public int GoldReward;
+    public bool IsActive;
+    public bool IsCompleted;
+    
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public QuestGoal Goal;
+    
+
 }
