@@ -12,46 +12,58 @@ public class CharAttack : MonoBehaviour
     [SerializeField] private Animator animator;
     private CharMovement charMovement;
     private CharController controller;
-    public bool canAttack = true;
-    private bool isAttacking = false;
+    
+    private float attackTime = .5f;
+    private float checkTime;
+    public bool isAttacking { get; set; }
 
-    
-    
-    private void Start(){
+
+    private void Start() {
         controller = GetComponent<CharController>();
-        charMovement = GetComponent<CharMovement>();
-        if(playerSword != null){
-            playerSword.SwordDamage = swordDamage;
+    }
+    
+    
+    
+    
+    private void Update(){
+        if (Input.GetKeyDown(KeyCode.Space)){
+                StartAttack();
+            }
+        
+        
+        if(isAttacking){
+            checkTime += Time.deltaTime;
+            if(checkTime >= attackTime){
+                isAttacking = false;
+                StopAttack();
+            }
         }
+
+
     }
 
-    private void Update(){
-        if(canAttack){
-            if(Input.GetKeyDown(KeyCode.Space)){
-            Attack();
-        }
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Atack")){
-            canAttack = false;
-        }else{
-            canAttack = true;
-            charMovement.ResetSpeed();
-        }
-        
 
-   }
-       
 
-        
-}
-        
-    private void Attack(){
-        charMovement.MoveSpeed = 0f;
-        canAttack = false;
+
+    
+    private void StartAttack(){
+        if(isAttacking){
+            return;
+        }
         isAttacking = true;
         animator.SetTrigger("Attack");
-
-
+        controller.NormalMovement = false;
     }
+
+
+
+    private void StopAttack(){
+        checkTime = 0;
+        controller.NormalMovement = true;
+    }
+
+
+        
 
 
 
