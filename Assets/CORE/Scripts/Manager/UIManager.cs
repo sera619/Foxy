@@ -30,6 +30,11 @@ public class UIManager : Singleton<UIManager>
 
     [Header("Level UP Settings")]
     [SerializeField] private GameObject levelupPanel;
+    [Header("Quest Tracker Setting")]
+    [SerializeField] private GameObject questTrackerPanel;
+    [SerializeField] private TextMeshProUGUI questNameTMP;
+    [SerializeField] private TextMeshProUGUI questDesTMP;
+    [SerializeField] private Image readyIcon;
 
     [Header("DeathScreen")]
     [SerializeField] private GameObject deathScreen;
@@ -173,5 +178,24 @@ public class UIManager : Singleton<UIManager>
         GameObject.FindGameObjectWithTag("Player").GetComponent<Health>().GainHealthBonus();
     }
 
+    public void UpdateQuestTracker(string questName, string questDescription, int currentAmount, int requiredAmount, bool isThisPlayer ){
+        isPlayer = isThisPlayer;
+        questDesTMP.text = questDescription + " " + currentAmount.ToString() + " / " + requiredAmount.ToString();
+        questNameTMP.text = questName;
+    }
 
+
+    public void HideQuestTracker(){
+        questTrackerPanel.SetActive(false);
+        readyIcon.enabled = false;
+    }
+    public void ShowQuestTracker(){
+        questTrackerPanel.SetActive(true);
+        readyIcon.enabled = false;
+    }
+    public void ShowReadyIcon(){
+        if (readyIcon !=null){
+            readyIcon.enabled = true;
+        }
+    }
 }

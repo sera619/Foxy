@@ -64,6 +64,12 @@ public class Health : MonoBehaviour
         if(character != null){
             isPlayer = character.CharType == Character.CharTypes.Player;
         }
+
+        UpdateCharacterHealth();
+
+    }
+ 
+    private void Start(){
         if(isPlayer && SaveLoad.SaveExists("PlayerLevel")){
             CurrentLevel = SaveLoad.Load<int>("PlayerLevel");
             CurrentXP = SaveLoad.Load<float>("PlayerCurrentExp");
@@ -71,10 +77,7 @@ public class Health : MonoBehaviour
             UpdatePlayerExp();
             UpdatePlayerLevel();
         }
-        UpdateCharacterHealth();
-
     }
- 
     protected virtual void Update(){
         if (charEffects != null){
             StartCoroutine(Timer());
@@ -193,6 +196,7 @@ public class Health : MonoBehaviour
                 gameManager.Save();
             }
             if(character.CharType == Character.CharTypes.AI){
+                GameEvents.OnEnemyDeath();
                 FindObjectOfType<CharPlayer>().GetComponent<Health>().GetXP(2);
             }
         }

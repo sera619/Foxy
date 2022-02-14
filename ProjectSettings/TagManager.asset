@@ -13,6 +13,8 @@ TagManager:
   - EnemyWeapon
   - PlayerSpell
   - NPCQuest
+  - Lights
+  - MiniMap
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - UI
   - LevelComponents
   - Enemy
-  - 
+  - Minimap
   - 
   - 
   - 
@@ -49,6 +51,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: MiniMap
+    uniqueID: 2643952861
     locked: 0
   - name: Map
     uniqueID: 3033079609

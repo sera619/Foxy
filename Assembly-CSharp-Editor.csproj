@@ -40,7 +40,7 @@
      <Compile Include="Assets\Standards\FSM\Editor\CreateState.cs" />
      <Compile Include="Assets\EntroPi\Cloud Shadows\Scripts\Editor\EditorUtil.cs" />
      <Compile Include="Assets\EntroPi\Cloud Shadows\Scripts\Editor\CloudLayersEditor.cs" />
-     <Compile Include="Assets\CORE\Scripts\DialogSystem\Editor\DialogResponseEventsEditor.cs" />
+     <Compile Include="Assets\CORE\DialogSystem\Editor\DialogResponseEventsEditor.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\1Coding\Codes\C ++\2020.3.28f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 3118755754009667552}
   - component: {fileID: 3118755754009667554}
   - component: {fileID: 3118755754009667555}
-  m_Layer: 0
+  - component: {fileID: 1918198939}
+  m_Layer: 3
   m_Name: Sprite
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -50,7 +51,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 7610173
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -2311659948842064771, guid: f378ce4892d29b741a714e0f6ae46f8b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -104,6 +105,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &1918198939
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3118755754009667553}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.029015692, y: 0.099971056}
+  m_Direction: 0
 --- !u!1 &3118755754246289754
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,6 +146,7 @@ GameObject:
   - component: {fileID: 6747530548480546778}
   - component: {fileID: 4733948707281523710}
   - component: {fileID: 1594179036249716901}
+  - component: {fileID: 1865614363177096676}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -242,6 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 4
+  dialogUI: {fileID: 0}
 --- !u!114 &3118755754246289741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,7 +369,6 @@ MonoBehaviour:
   swordDamage: 2
   playerSword: {fileID: 3118755754915755415}
   animator: {fileID: 3118755754009667555}
-  canAttack: 1
 --- !u!114 &6747530548480546778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,6 +381,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11f808c0b45ef3849837bf72a7d8b826, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogUI: {fileID: 0}
+  questTracker: {fileID: 0}
 --- !u!114 &4733948707281523710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,6 +412,18 @@ MonoBehaviour:
   spellToUse: {fileID: 7256389000534871883, guid: f4688d0498bba994b961cebd084295cb, type: 3}
   spellHolderPosition: {fileID: 1893121751566874362}
   fireCast: {fileID: 0}
+--- !u!114 &1865614363177096676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3118755754246289754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1afdfb25edebc66479ed07566e4aab3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3118755754871955807
 GameObject:
   m_ObjectHideFlags: 0

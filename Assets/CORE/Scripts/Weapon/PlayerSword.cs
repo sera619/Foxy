@@ -13,9 +13,7 @@ public class PlayerSword : MonoBehaviour
     private void Start() {
         SwordDamage =  swordDamage;
     }
-    public bool canAttack(){
-        return charAttack.canAttack = true;
-    }
+    
 
 
 

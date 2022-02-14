@@ -11,8 +11,8 @@ public class DayCircle : MonoBehaviour
     [SerializeField] private Light2D light2d;
 
     [Header("Time Settings")]
-    [SerializeField] public float dayLength = 10.0f;
     [SerializeField] public float nightLength = 10.0f;
+    [SerializeField] public float dayLength = 10.0f;
     
     [SerializeField] [Range(0f, 1f)] float lerpTime;
     public Color dayColor = new Color(1.0f, 1.0f, 1.0f);
@@ -20,17 +20,27 @@ public class DayCircle : MonoBehaviour
     
     public bool daytime { get; private set; }
     private float timeRemaining;
+    private StreetLight streetLight;
 
+    private void Start() {
+        streetLight = GetComponent<StreetLight>();
+    }
 
     private void Update(){
         timeRemaining -= Time.deltaTime;
         if(timeRemaining <= 0){
             daytime = !daytime;
             if(daytime){
+                if(streetLight != null){
+                    streetLight.LightOff();
+                }
                 light2d.color = Color.Lerp(nightColor, dayColor, lerpTime *  Time.time);
                 timeRemaining = dayLength;
 
             }else{
+                if(streetLight !=null){
+                    streetLight.LightOn();
+                }
                 light2d.color = Color.Lerp(dayColor,nightColor, lerpTime * Time.time);
                 timeRemaining = nightLength;
             }
