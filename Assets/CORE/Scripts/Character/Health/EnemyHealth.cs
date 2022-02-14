@@ -6,6 +6,12 @@ using TMPro;
 public class EnemyHealth : MonoBehaviour
 {   [Header("Settings")]
     [SerializeField] private GameObject healthPanel;
+    [Header("Lvl/Name Settings")]
+    [SerializeField] private TextMeshProUGUI nameTextfield;
+    [SerializeField] private TextMeshProUGUI lvlTextfield;
+    [SerializeField] private string enemyName;
+    [SerializeField] private int enemyLevel;
+    public int ID { get; set; }
     
     
     [Header("Health Bar Settings")]
@@ -23,11 +29,6 @@ public class EnemyHealth : MonoBehaviour
 
 
 
-    [Header("Lvl/Name Settings")]
-    [SerializeField] private TextMeshProUGUI nameTextfield;
-    [SerializeField] private TextMeshProUGUI lvlTextfield;
-    [SerializeField] private string enemyName;
-    [SerializeField] private int enemyLevel;
 
     private Health enemyHealth;
     private float enemyCurrentHealth;
@@ -39,11 +40,15 @@ public class EnemyHealth : MonoBehaviour
     private float enemyMaxMana;
     private CharEffects charEffects;
 
+    public float EnemyCurrentHealth => enemyCurrentHealth;
+
+
 
     private void Start(){
         enemyHealth = GetComponent<Health>();
         healthPanel.SetActive(true);
         charEffects = GetComponent<CharEffects>();
+        ID = 0;
     }
     
 
